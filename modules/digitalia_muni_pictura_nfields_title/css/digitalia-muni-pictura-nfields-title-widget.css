@@ -1,0 +1,21 @@
+/* pictura-nfields-title-elements */
+
+.digitalia-muni-pictura-nfields-title-elements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.digitalia-muni-pictura-nfields-title-elements select {
+    width: 100%;
+}
+
+.ql-toolbar.ql-snow {
+    border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
+}
+
+.quill-wrapper.ql-container.ql-snow {
+    border-radius: 0 0 var(--gin-border-m) var(--gin-border-m);
+    background: white;
+}
+

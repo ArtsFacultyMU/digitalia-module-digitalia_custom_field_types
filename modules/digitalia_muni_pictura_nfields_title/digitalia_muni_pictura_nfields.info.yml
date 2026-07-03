@@ -1,0 +1,5 @@
+name: 'Digitalia muni Pictura nfields title'
+type: module
+description: '@Title Nfields created for Pictura.'
+package: '@todo Add package'
+core_version_requirement: ^10
