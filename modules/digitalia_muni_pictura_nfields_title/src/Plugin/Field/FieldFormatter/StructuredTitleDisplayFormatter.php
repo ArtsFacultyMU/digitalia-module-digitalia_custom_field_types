@@ -59,10 +59,10 @@ final class StructuredTitleDisplayFormatter extends FormatterBase {
       } 
 
       if ($item->title) {
-        $module_path = \Drupal::service('extension.list.module')->getPath('digitalia_muni_pictura_nfields');
+        $module_path = \Drupal::service('extension.list.module')->getPath('digitalia_muni_pictura_nfields_title');
         $img_src = '/' . $module_path . '/assets/info.svg';
 
-        $build['#attached']['library'][] = 'digitalia_muni_pictura_nfields/display-details';
+        $build['#attached']['library'][] = 'digitalia_muni_pictura_nfields_title/display-details';
 
         $build['display_value'] = [
           '#type' => 'details',
