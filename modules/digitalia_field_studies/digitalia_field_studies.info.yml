@@ -1,0 +1,5 @@
+name: 'Digitalia field Studies'
+type: module
+description: 'Stores custom field type Studies'
+package: 'digitalia_custom_field_types'
+core_version_requirement: ^10

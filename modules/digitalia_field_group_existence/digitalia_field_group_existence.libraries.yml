@@ -1,0 +1,4 @@
+digitalia_field_group_existence:
+  css:
+    component:
+      css/digitalia-field-group-existence-widget.css: {}

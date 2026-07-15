@@ -1,0 +1,15 @@
+
+# Default value.
+field.value.digitalia_field_group_existence:
+  type: mapping
+  label: Default value
+  mapping:
+    existence_type:
+      type: string
+      label: Type of existence
+    from:
+      type: integer
+      label: From
+    to:
+      type: integer
+      label: To

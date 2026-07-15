@@ -1,5 +1,5 @@
-name: 'digitalia_field_links'
+name: 'Digitalia field Links'
 type: module
-description: 'Contains three subfields: link type, link label and URL'
-package: digitalia-module-custom_field_types
-core_version_requirement: ^10 || ^11
+description: 'Stores custom field type Links'
+package: 'digitalia_custom_field_types'
+core_version_requirement: ^10

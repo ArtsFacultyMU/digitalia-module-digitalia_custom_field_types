@@ -1,0 +1,5 @@
+name: 'Digitalia field Work in Institutions'
+type: module
+description: 'Stores custom field type Work in Institutions'
+package: 'digitalia_custom_field_types'
+core_version_requirement: ^10

@@ -1,5 +1,5 @@
-name: 'Digitalia field person name'
+name: 'Digitalia field Person Name'
 type: module
-description: '@todo Add description.'
-package: '@todo Add package'
+description: 'Stores custom field type Person Name'
+package: 'digitalia_custom_field_types'
 core_version_requirement: ^10

@@ -1,0 +1,4 @@
+digitalia_field_group_localization:
+  css:
+    component:
+      css/digitalia-field-group-localization-widget.css: {}

@@ -1,0 +1,4 @@
+digitalia_field_studies:
+  css:
+    component:
+      css/digitalia-field-studies-widget.css: {}

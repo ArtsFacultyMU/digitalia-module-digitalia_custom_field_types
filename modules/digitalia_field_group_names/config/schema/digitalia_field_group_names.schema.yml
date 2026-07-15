@@ -1,0 +1,21 @@
+
+# Default value.
+field.value.digitalia_field_group_names:
+  type: mapping
+  label: Default value
+  mapping:
+    name_category:
+      type: string
+      label: Name category
+    name:
+      type: string
+      label: Name
+    specification:
+      type: string
+      label: Specification
+    name_source:
+      type: text
+      label: Name source
+    name_note:
+      type: text
+      label: Value 5

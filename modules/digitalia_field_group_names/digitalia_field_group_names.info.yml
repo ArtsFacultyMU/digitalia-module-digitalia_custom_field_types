@@ -1,0 +1,5 @@
+name: 'Digitalia field Group names'
+type: module
+description: 'Stores field Group names used in Lexicon'
+package: 'digitalia_custom_field_types'
+core_version_requirement: ^10

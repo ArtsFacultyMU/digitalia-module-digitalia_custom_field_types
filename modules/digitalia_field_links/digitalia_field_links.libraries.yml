@@ -1,0 +1,4 @@
+digitalia_field_links:
+  css:
+    component:
+      css/digitalia-field-links-widget.css: {}

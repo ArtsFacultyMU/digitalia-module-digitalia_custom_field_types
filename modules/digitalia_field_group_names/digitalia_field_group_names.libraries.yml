@@ -1,0 +1,4 @@
+digitalia_field_group_names:
+  css:
+    component:
+      css/digitalia-field-group-names-widget.css: {}

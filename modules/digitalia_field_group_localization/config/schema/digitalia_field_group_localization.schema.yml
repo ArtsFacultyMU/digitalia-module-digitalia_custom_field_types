@@ -1,0 +1,21 @@
+
+# Default value.
+field.value.digitalia_field_group_localization:
+  type: mapping
+  label: Default value
+  mapping:
+    localization_type:
+      type: string
+      label: Localization type
+    place:
+      type: string
+      label: Place
+    identifier_scheme:
+      type: string
+      label: Identifier scheme
+    identifier:
+      type: string
+      label: Identifier
+    localization_note:
+      type: text
+      label: Localization note
