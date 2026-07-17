@@ -58,6 +58,9 @@ final class DescriptionWidget extends WidgetBase {
       '#type' => 'textarea',
       '#title' => $this->t('Description'),
       '#default_value' => $items[$delta]->description ?? NULL,
+      '#attributes' => [
+        'class' => ['quill-editor-initialized'],
+      ],
     ];
 
     $element['language'] = [
@@ -71,6 +74,10 @@ final class DescriptionWidget extends WidgetBase {
       '#type' => 'textarea',
       '#title' => $this->t('Source'),
       '#default_value' => $items[$delta]->source ?? NULL,
+      '#rows' => 2,
+      '#attributes' => [
+        'class' => ['quill-editor-initialized'],
+      ],
     ];
 
     $element['source_id'] = [
@@ -83,18 +90,20 @@ final class DescriptionWidget extends WidgetBase {
       '#type' => 'textarea',
       '#title' => $this->t('Note'),
       '#default_value' => $items[$delta]->note ?? NULL,
+      '#rows' => 2,
     ];
-
+    /*
     $element['system_note'] = [
       '#type' => 'textarea',
       '#title' => $this->t('System note'),
       '#default_value' => $items[$delta]->system_note ?? NULL,
     ];
+    */
 
     $element['#theme_wrappers'] = ['container', 'form_element'];
     $element['#attributes']['class'][] = 'digitalia-pictura-description-elements';
     $element['#attached']['library'][] = 'digitalia_pictura_description/digitalia_pictura_description';
-
+    $element['#attached']['library'][] = 'digitalia_custom_field_types/editor';
     return $element;
   }
 

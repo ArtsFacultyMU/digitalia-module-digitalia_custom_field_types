@@ -2,3 +2,6 @@ digitalia_pictura_description:
   css:
     component:
       css/digitalia-pictura-description-widget.css: {}
+  dependencies:
+    - digitalia_custom_field_types/editor
+    - digitalia_custom_field_types/display-details

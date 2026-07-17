@@ -62,7 +62,7 @@ final class DescriptionItem extends FieldItemBase {
 
     $options['description']['NotBlank'] = [];
 
-    $options['language']['AllowedValues'] = array_keys(DescriptionItem::allowedLanguageValues());
+    $options['language']['AllowedValues'] = array_keys(self::allowedLanguageValues());
 
     $options['language']['NotBlank'] = [];
 

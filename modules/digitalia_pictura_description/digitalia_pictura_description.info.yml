@@ -1,5 +1,7 @@
 name: 'Digitalia Pictura Description'
 type: module
-description: '@todo Add description.'
-package: '@todo Add package'
+description: 'Provides a custom structured field type for descriptions based on VRA for Pictura.'
+package: digitalia-module-custom_field_types
 core_version_requirement: ^10
+dependencies:
+  - digitalia_custom_field_types

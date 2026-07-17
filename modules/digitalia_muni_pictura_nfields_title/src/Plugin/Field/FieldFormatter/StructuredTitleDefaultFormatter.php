@@ -20,33 +20,6 @@ use Drupal\digitalia_muni_pictura_nfields_title\Plugin\Field\FieldType\Structure
  */
 final class StructuredTitleDefaultFormatter extends FormatterBase {
 
-  /**
-   * {@inheritdoc}
-   */
-  public static function defaultSettings(): array {
-    return ['foo' => 'bar'] + parent::defaultSettings();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsForm(array $form, FormStateInterface $form_state): array {
-    $element['foo'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Foo'),
-      '#default_value' => $this->getSetting('foo'),
-    ];
-    return $element;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsSummary(): array {
-    return [
-      $this->t('Foo: @foo', ['@foo' => $this->getSetting('foo')]),
-    ];
-  }
 
   /**
    * {@inheritdoc}

@@ -92,15 +92,15 @@ final class StructuredTitleItem extends FieldItemBase {
 
     $options['title']['NotBlank'] = [];
 
-    $options['title_type']['AllowedValues'] = array_keys(StructuredTitleItem::allowedTitleTypeValues());
+    $options['title_type']['AllowedValues'] = array_keys(self::allowedTitleTypeValues());
 
     $options['title_type']['NotBlank'] = [];
 
-    $options['language']['AllowedValues'] = array_keys(StructuredTitleItem::allowedLanguageValues());
+    $options['language']['AllowedValues'] = array_keys(self::allowedLanguageValues());
 
     $options['language']['NotBlank'] = [];
 
-    $options['id_type']['AllowedValues'] = array_keys(StructuredTitleItem::allowedTitleIDTypeValues());
+    $options['id_type']['AllowedValues'] = array_keys(self::allowedTitleIDTypeValues());
 
     $constraint_manager = \Drupal::typedDataManager()->getValidationConstraintManager();
     $constraints[] = $constraint_manager->create('ComplexData', $options);
