@@ -10,6 +10,7 @@ use Drupal\Core\Field\FieldItemBase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\TypedData\DataDefinition;
+use Drupal\digitalia_custom_field_types\Plugin\Field\FieldType\AllowedLanguageValuesTrait;
 
 /**
  * Defines the 'digitalia_muni_pictura_nfields_title' field type.
@@ -23,6 +24,8 @@ use Drupal\Core\TypedData\DataDefinition;
  * )
  */
 final class StructuredTitleItem extends FieldItemBase {
+
+  use AllowedLanguageValuesTrait;
 
   /**
    * {@inheritdoc}
@@ -202,25 +205,6 @@ final class StructuredTitleItem extends FieldItemBase {
       'popular' => t('popular'),
       'repository' => t('repository'),
       'translated' => t('translated'),
-      'other' => t('other'),
-    ];
-  }
-
-  /**
-   * Returns allowed values for 'language' sub-field. ISO639-2
-   */
-  public static function allowedLanguageValues(): array {
-    return [
-      'eng' => t('English'),
-      'ces' => t('Czech'),
-      'lat' => t('Latin'),
-      'ger' => t('German'),
-      'fre' => t('French'),
-      'rus' => t('Russian'),
-      'ita' => t('Italian'),
-      'gre' => t('Modern Greek'),
-      'pol' => t('Polish'),
-      'spa' => t('Spanish'),
       'other' => t('other'),
     ];
   }

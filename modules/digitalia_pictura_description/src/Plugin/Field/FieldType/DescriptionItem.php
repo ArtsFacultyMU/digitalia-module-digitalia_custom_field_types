@@ -9,6 +9,7 @@ use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemBase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\TypedData\DataDefinition;
+use Drupal\digitalia_custom_field_types\Plugin\Field\FieldType\AllowedLanguageValuesTrait;
 
 /**
  * Defines the 'digitalia_pictura_description' field type.
@@ -22,6 +23,8 @@ use Drupal\Core\TypedData\DataDefinition;
  * )
  */
 final class DescriptionItem extends FieldItemBase {
+
+  use AllowedLanguageValuesTrait;
 
   /**
    * {@inheritdoc}
@@ -129,18 +132,6 @@ final class DescriptionItem extends FieldItemBase {
     $values['system_note'] = $random->paragraphs(5);
 
     return $values;
-  }
-
-  /**
-   * Returns allowed values for 'language' sub-field.
-   */
-  public static function allowedLanguageValues(): array {
-    // @todo Update allowed values.
-    return [
-      'alpha' => t('Alpha'),
-      'beta' => t('Beta'),
-      'gamma' => t('Gamma'),
-    ];
   }
 
 }
