@@ -97,7 +97,7 @@ final class StructuredTitleWidget extends WidgetBase {
     $element['#theme_wrappers'] = ['container', 'form_element'];
     $element['#attributes']['class'][] = 'digitalia-muni-pictura-nfields-title-elements';
     $element['#attached']['library'][] = 'digitalia_muni_pictura_nfields_title/digitalia_muni_pictura_nfields_title';
-    $element['#attached']['library'][] = 'digitalia_muni_pictura_nfields_title/editor';
+    $element['#attached']['library'][] = 'digitalia_custom_field_types/editor';
     
     return $element;
   }

@@ -32,3 +32,13 @@ CSS for a custom Display field formatter that uses a details element with an inf
 ## Allowed language values
 
 Returns allowed values for 'language' sub-field. ISO639-2.
+
+In field type definition file add
+```
+use Drupal\digitalia_custom_field_types\Plugin\Field\FieldType\AllowedLanguageValuesTrait;
+```
+
+Inside class extending FieldItemBase add
+```
+use AllowedLanguageValuesTrait;
+```
