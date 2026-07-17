@@ -1,5 +1,7 @@
 name: 'Digitalia pictura inscription'
 type: module
-description: '@todo Add description.'
-package: '@todo Add package'
+description: 'Custom field type used in Digitalia MUNI Arts for pictura inscription information. This field type is implemented as a separate submodule that has to be enabled to use it.'
+package: 'digitalia-module-custom_field_types'
 core_version_requirement: ^10
+dependencies:
+  - digitalia_custom_field_types

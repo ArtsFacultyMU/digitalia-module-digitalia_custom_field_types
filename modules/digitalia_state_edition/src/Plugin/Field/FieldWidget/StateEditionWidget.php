@@ -61,6 +61,10 @@ final class StateEditionWidget extends WidgetBase {
       '#type' => 'textarea',
       '#title' => $this->t('Source'),
       '#default_value' => $items[$delta]->source ?? NULL,
+      '#rows' => 2,
+      '#attributes' => [
+        'class' => ['digitalia-editor', 'quill-editor-initialized'],
+      ],
     ];
 
     $element['source_id'] = [
@@ -68,7 +72,7 @@ final class StateEditionWidget extends WidgetBase {
       '#title' => $this->t('Source ID'),
       '#default_value' => $items[$delta]->source_id ?? NULL,
     ];
-
+    /*
     $element['note'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Note'),
@@ -80,10 +84,11 @@ final class StateEditionWidget extends WidgetBase {
       '#title' => $this->t('System note'),
       '#default_value' => $items[$delta]->system_note ?? NULL,
     ];
-
+    */
     $element['#theme_wrappers'] = ['container', 'form_element'];
     $element['#attributes']['class'][] = 'digitalia-state-edition-elements';
     $element['#attached']['library'][] = 'digitalia_state_edition/digitalia_state_edition';
+    $element['#attached']['library'][] = 'digitalia_custom_field_types/editor';
 
     return $element;
   }

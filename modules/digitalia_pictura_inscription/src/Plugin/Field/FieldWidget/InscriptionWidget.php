@@ -80,6 +80,10 @@ final class InscriptionWidget extends WidgetBase {
       '#type' => 'textarea',
       '#title' => $this->t('Source'),
       '#default_value' => $items[$delta]->source ?? NULL,
+      '#rows' => 2,
+      '#attributes' => [
+        'class' => ['digitalia-editor', 'quill-editor-initialized'],
+      ],
     ];
 
     $element['source_id'] = [
@@ -93,16 +97,18 @@ final class InscriptionWidget extends WidgetBase {
       '#title' => $this->t('Note'),
       '#default_value' => $items[$delta]->note ?? NULL,
     ];
-
+    /*
     $element['system_note'] = [
       '#type' => 'textarea',
       '#title' => $this->t('System note'),
       '#default_value' => $items[$delta]->system_note ?? NULL,
     ];
+    */
 
     $element['#theme_wrappers'] = ['container', 'form_element'];
     $element['#attributes']['class'][] = 'digitalia-pictura-inscription-elements';
     $element['#attached']['library'][] = 'digitalia_pictura_inscription/digitalia_pictura_inscription';
+    $element['#attached']['library'][] = 'digitalia_custom_field_types/editor';
 
     return $element;
   }

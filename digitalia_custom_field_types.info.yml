@@ -1,5 +1,5 @@
 name: 'digitalia_custom_field_types'
 type: module
 description: 'Custom field types used in Digitalia MUNI Arts. Each field type is implemented as separate submodule that has to be enabled to use it.'
-package: custom
+package: digitalia-module-custom_field_types
 core_version_requirement: ^10 || ^11

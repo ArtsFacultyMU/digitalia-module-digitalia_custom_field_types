@@ -3,7 +3,7 @@
   Drupal.behaviors.quillEditor = {
     attach(context) {
 
-      once('quill-editor', 'textarea[name^="field_titles"][name$="[source]"], textarea[name^="field_descriptions"][name$="[source]"], textarea[name^="field_descriptions"][name$="[description]"]', context)
+      once('digitalia-editor', 'textarea.digitalia-editor', context)
         .forEach((textarea) => {
 
           if (textarea.dataset.quillInitialized) {

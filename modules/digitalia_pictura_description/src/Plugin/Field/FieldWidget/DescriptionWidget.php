@@ -58,6 +58,7 @@ final class DescriptionWidget extends WidgetBase {
       '#type' => 'textarea',
       '#title' => $this->t('Description'),
       '#default_value' => $items[$delta]->description ?? NULL,
+      '#rows' => 5,
       '#attributes' => [
         'class' => ['quill-editor-initialized'],
       ],
@@ -86,13 +87,14 @@ final class DescriptionWidget extends WidgetBase {
       '#default_value' => $items[$delta]->source_id ?? NULL,
     ];
 
+    /*
     $element['note'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Note'),
       '#default_value' => $items[$delta]->note ?? NULL,
       '#rows' => 2,
     ];
-    /*
+
     $element['system_note'] = [
       '#type' => 'textarea',
       '#title' => $this->t('System note'),

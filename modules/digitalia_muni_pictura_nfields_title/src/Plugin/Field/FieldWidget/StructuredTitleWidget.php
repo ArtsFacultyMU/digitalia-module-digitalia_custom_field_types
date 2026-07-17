@@ -75,10 +75,11 @@ final class StructuredTitleWidget extends WidgetBase {
       '#default_value' => $items[$delta]->source ?? NULL,
       '#rows' => 2,
       '#attributes' => [
-        'class' => ['quill-editor-initialized'],
+        'class' => ['digitalia-editor', 'quill-editor-initialized'],
       ],
     ];
 
+    /*
     $element['note'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Note'),
@@ -86,7 +87,7 @@ final class StructuredTitleWidget extends WidgetBase {
       '#rows' => 2,
     ];
 
-    /*
+
     $element['system_note'] = [
       '#type' => 'textarea',
       '#title' => $this->t('System note'),

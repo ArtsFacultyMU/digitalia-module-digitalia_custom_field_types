@@ -12,18 +12,15 @@ Adds a simple editor to a text subfield.
 
 Attach the library to the Widget
 ```
-$element['#attached']['library'][] = 'digitalia_custom_field_type/editor';
+$element['#attached']['library'][] = 'digitalia_custom_field_types/editor';
 ```
 and add the class 'quill-editor-inicialized' to the text fields you wish to use the editor on
 ```
       '#attributes' => [
-        'class' => ['quill-editor-initialized'],
+        'class' => ['digitalia-editor', 'quill-editor-initialized'],
       ],
 ```
-in editor.js on line 6 identify the fields to be used
-```
-'textarea[name^="field_{{parent}}"][name$="[{{subfield name}}]"]'
-```
+
 
 ## Display details
 

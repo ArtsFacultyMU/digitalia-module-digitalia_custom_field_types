@@ -8,7 +8,6 @@ editor:
     theme:
       https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css:
         type: external
-    component:
       css/digitalia_custom_field_types_editor.css: {}
   dependencies:
     - core/drupal
