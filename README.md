@@ -20,7 +20,15 @@ and add the class 'quill-editor-inicialized' to the text fields you wish to use 
         'class' => ['quill-editor-initialized'],
       ],
 ```
+in editor.js on line 6 identify the fields to be used
+```
+'textarea[name^="field_{{parent}}"][name$="[{{subfield name}}]"]'
+```
 
 ## Display details
 
 CSS for a custom Display field formatter that uses a details element with an info icon. 
+
+## Allowed language values
+
+Returns allowed values for 'language' sub-field. ISO639-2.
