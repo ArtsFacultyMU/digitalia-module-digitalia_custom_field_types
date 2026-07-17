@@ -1,0 +1,4 @@
+digitalia_pictura_inscription:
+  css:
+    component:
+      css/digitalia-pictura-inscription-widget.css: {}

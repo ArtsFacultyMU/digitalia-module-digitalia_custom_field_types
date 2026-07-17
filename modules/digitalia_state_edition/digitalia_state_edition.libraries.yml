@@ -1,0 +1,4 @@
+digitalia_state_edition:
+  css:
+    component:
+      css/digitalia-state-edition-widget.css: {}

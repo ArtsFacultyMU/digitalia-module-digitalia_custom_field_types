@@ -1,0 +1,4 @@
+digitalia_pictura_relation:
+  css:
+    component:
+      css/digitalia-pictura-relation-widget.css: {}
