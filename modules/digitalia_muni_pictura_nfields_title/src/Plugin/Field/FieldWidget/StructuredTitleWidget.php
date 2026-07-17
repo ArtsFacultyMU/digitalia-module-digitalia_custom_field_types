@@ -21,33 +21,6 @@ use Symfony\Component\Validator\ConstraintViolationInterface;
  */
 final class StructuredTitleWidget extends WidgetBase {
 
-  /**
-   * {@inheritdoc}
-   */
-  public static function defaultSettings(): array {
-    return ['foo' => 'bar'] + parent::defaultSettings();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsForm(array $form, FormStateInterface $form_state): array {
-    $element['foo'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Foo'),
-      '#default_value' => $this->getSetting('foo'),
-    ];
-    return $element;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsSummary(): array {
-    return [
-      $this->t('Foo: @foo', ['@foo' => $this->getSetting('foo')]),
-    ];
-  }
 
   /**
    * {@inheritdoc}
@@ -101,6 +74,9 @@ final class StructuredTitleWidget extends WidgetBase {
       '#title' => $this->t('Source'),
       '#default_value' => $items[$delta]->source ?? NULL,
       '#rows' => 2,
+      '#attributes' => [
+        'class' => ['quill-editor-initialized'],
+      ],
     ];
 
     $element['note'] = [
@@ -121,7 +97,7 @@ final class StructuredTitleWidget extends WidgetBase {
     $element['#theme_wrappers'] = ['container', 'form_element'];
     $element['#attributes']['class'][] = 'digitalia-muni-pictura-nfields-title-elements';
     $element['#attached']['library'][] = 'digitalia_muni_pictura_nfields_title/digitalia_muni_pictura_nfields_title';
-    $element['#attached']['library'][] = 'digitalia_muni_pictura_nfields/editor';
+    $element['#attached']['library'][] = 'digitalia_muni_pictura_nfields_title/editor';
     
     return $element;
   }
