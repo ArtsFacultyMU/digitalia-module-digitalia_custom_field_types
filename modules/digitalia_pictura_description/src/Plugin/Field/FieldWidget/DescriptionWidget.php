@@ -24,34 +24,6 @@ final class DescriptionWidget extends WidgetBase {
   /**
    * {@inheritdoc}
    */
-  public static function defaultSettings(): array {
-    return ['foo' => 'bar'] + parent::defaultSettings();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsForm(array $form, FormStateInterface $form_state): array {
-    $element['foo'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Foo'),
-      '#default_value' => $this->getSetting('foo'),
-    ];
-    return $element;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsSummary(): array {
-    return [
-      $this->t('Foo: @foo', ['@foo' => $this->getSetting('foo')]),
-    ];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state): array {
 
     $element['description'] = [
@@ -60,7 +32,7 @@ final class DescriptionWidget extends WidgetBase {
       '#default_value' => $items[$delta]->description ?? NULL,
       '#rows' => 5,
       '#attributes' => [
-        'class' => ['quill-editor-initialized'],
+        'class' => ['digitalia-editor', 'quill-editor-initialized'],
       ],
     ];
 
@@ -77,7 +49,7 @@ final class DescriptionWidget extends WidgetBase {
       '#default_value' => $items[$delta]->source ?? NULL,
       '#rows' => 2,
       '#attributes' => [
-        'class' => ['quill-editor-initialized'],
+        'class' => ['digitalia-editor', 'quill-editor-initialized'],
       ],
     ];
 

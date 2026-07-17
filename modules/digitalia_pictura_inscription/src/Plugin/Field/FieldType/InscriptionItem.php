@@ -9,6 +9,7 @@ use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemBase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\TypedData\DataDefinition;
+use Drupal\digitalia_custom_field_types\Plugin\Field\FieldType\AllowedLanguageValuesTrait;
 
 /**
  * Defines the 'digitalia_pictura_inscription' field type.
@@ -16,12 +17,14 @@ use Drupal\Core\TypedData\DataDefinition;
  * @FieldType(
  *   id = "digitalia_pictura_inscription",
  *   label = @Translation("Inscription"),
- *   description = @Translation("Some description."),
+ *   description = @Translation("VRA Inscription field type."),
  *   default_widget = "digitalia_pictura_inscription",
  *   default_formatter = "digitalia_pictura_inscription_default",
  * )
  */
 final class InscriptionItem extends FieldItemBase {
+
+  use AllowedLanguageValuesTrait;
 
   /**
    * {@inheritdoc}
@@ -69,9 +72,9 @@ final class InscriptionItem extends FieldItemBase {
   public function getConstraints(): array {
     $constraints = parent::getConstraints();
 
-    $options['language']['AllowedValues'] = array_keys(InscriptionItem::allowedLanguageValues());
+    $options['language']['AllowedValues'] = array_keys(self::allowedLanguageValues());
 
-    $options['author_vocab']['AllowedValues'] = array_keys(InscriptionItem::allowedAuthorIDTypeValues());
+    $options['author_vocab']['AllowedValues'] = array_keys(self::allowedAuthorIDTypeValues());
 
     $constraint_manager = \Drupal::typedDataManager()->getValidationConstraintManager();
     $constraints[] = $constraint_manager->create('ComplexData', $options);
@@ -177,27 +180,15 @@ final class InscriptionItem extends FieldItemBase {
     return $values;
   }
 
-  /**
-   * Returns allowed values for 'language' sub-field.
-   */
-  public static function allowedLanguageValues(): array {
-    // @todo Update allowed values.
-    return [
-      'alpha' => t('Alpha'),
-      'beta' => t('Beta'),
-      'gamma' => t('Gamma'),
-    ];
-  }
 
   /**
    * Returns allowed values for 'author_vocab' sub-field.
    */
   public static function allowedAuthorIDTypeValues(): array {
-    // @todo Update allowed values.
     return [
-      'alpha' => t('Alpha'),
-      'beta' => t('Beta'),
-      'gamma' => t('Gamma'),
+      'ulan' => t('ULAN'),
+      'wikidata' => t('WikiData'),
+      'viaf' => t('VIAF'),
     ];
   }
 

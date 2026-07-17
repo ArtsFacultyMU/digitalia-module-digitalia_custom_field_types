@@ -16,7 +16,7 @@ use Drupal\Core\TypedData\DataDefinition;
  * @FieldType(
  *   id = "digitalia_state_edition",
  *   label = @Translation("State Edition"),
- *   description = @Translation("Some description."),
+ *   description = @Translation("Digitalia VRA State Edition field type."),
  *   default_widget = "digitalia_state_edition",
  *   default_formatter = "digitalia_state_edition_default",
  * )
@@ -155,11 +155,14 @@ final class StateEditionItem extends FieldItemBase {
    * Returns allowed values for 'type' sub-field.
    */
   public static function allowedTypeValues(): array {
-    // @todo Update allowed values.
     return [
-      'alpha' => t('Alpha'),
-      'beta' => t('Beta'),
-      'gamma' => t('Gamma'),
+      'signature' => t('Signature'),
+      'mark' => t('Mark'),
+      'caption' => t('Caption'),
+      'date' => t('Date'),
+      'text' => t('Text'),
+      'translation' => t('Translation'),
+      'other' => t('Other'),
     ];
   }
 

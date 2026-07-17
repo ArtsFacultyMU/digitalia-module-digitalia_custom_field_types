@@ -17,7 +17,7 @@ use Drupal\digitalia_custom_field_types\Plugin\Field\FieldType\AllowedLanguageVa
  * @FieldType(
  *   id = "digitalia_pictura_description",
  *   label = @Translation("Description"),
- *   description = @Translation("Some description."),
+ *   description = @Translation("digitalia_pictura_description field type."),
  *   default_widget = "digitalia_pictura_description",
  *   default_formatter = "digitalia_pictura_description_default",
  * )

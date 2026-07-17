@@ -21,7 +21,6 @@ and add the class 'quill-editor-inicialized' to the text fields you wish to use 
       ],
 ```
 
-
 ## Display details
 
 CSS for a custom Display field formatter that uses a details element with an info icon. 
