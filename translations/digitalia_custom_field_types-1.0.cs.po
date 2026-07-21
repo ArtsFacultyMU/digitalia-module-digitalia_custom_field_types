@@ -1,0 +1,63 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: digitalia_muni_custom_field_types\n"
+"POT-Creation-Date: 2026-07-21 12:00+0000\n"
+"PO-Revision-Date: 2026-07-21 12:00+0000\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Used across pictura nfields
+msgid "Language"
+msgstr "Jazyk"
+
+mgsid "Source"
+msgstr "Zdroj"
+
+mgsid "Source ID"
+msgstr "ID zdroje"
+
+mgsid "Note"
+msgstr "Poznámka"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Name"
+msgstr "Název"
+
+# Languages
+
+msgid "English"
+msgstr "Angličtina"
+
+msgid "Czech"
+msgstr "Čeština"
+
+msgid "Latin"
+msgstr "Latina"
+
+msgid "German"
+msgstr "Němčina"
+
+msgid "French"
+msgstr "Francouzština"
+
+msgid "Russian"
+msgstr "Ruština"
+
+msgid "Italian"
+msgstr "Italština"
+
+msgid "Modern Greek"
+msgstr "Moderní řečtina"
+
+msgid "Polish"
+msgstr "Polština"
+
+msgid "Spanish"
+msgstr "Španělština"
+
+msgid "other"
+msgstr "jiné"

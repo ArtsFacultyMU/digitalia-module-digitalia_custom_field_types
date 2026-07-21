@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: digitalia_muni_pictura_nfields\n"
+"POT-Creation-Date: 2026-07-21 12:00+0000\n"
+"PO-Revision-Date: 2026-07-21 12:00+0000\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# src/Plugin/Field/FieldType/StructuredTitleItem.php
+msgid "Language"
+msgstr "Jazyk"
+
+mgsid "Title"
+msgstr "Název"
+
+mgsid "Title type"
+msgstr "Typ názvu"
+
+mgsid "Title ID"
+msgstr "ID názvu"
+
+mgsid "Title ID type"
+msgstr "Typ ID názvu"
+
+# src/Plugin/Field/FieldType/StructuredTitleItem.php Title type
+
+msgid "brand name"
+msgstr "značka"
+
+msgid "cited"
+msgstr "citovaný"
+
+msgid "creator"
+msgstr "tvůrce"
+
+msgid "descriptive"
+msgstr "popisný"
+
+msgid "former"
+msgstr "bývalý"
+
+msgid "general view"
+msgstr "celkový pohled"
+
+msgid "inscribed"
+msgstr "vepsaný"
+
+msgid "owner"
+msgstr "vlastník"
+
+msgid "partial view"
+msgstr "částečný pohled"
+
+msgid "popular"
+msgstr "populární"
+
+msgid "repository"
+msgstr "repozitář"
+
+msgid "translated"
+msgstr "přeložený"
+
+msgid "other"
+msgstr "jiné"

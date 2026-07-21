@@ -155,14 +155,11 @@ final class StateEditionItem extends FieldItemBase {
    * Returns allowed values for 'type' sub-field.
    */
   public static function allowedTypeValues(): array {
+    // state, edition, or impression
     return [
-      'signature' => t('Signature'),
-      'mark' => t('Mark'),
-      'caption' => t('Caption'),
-      'date' => t('Date'),
-      'text' => t('Text'),
-      'translation' => t('Translation'),
-      'other' => t('Other'),
+      'state' => t('State'),
+      'edition' => t('Edition'),
+      'impression' => t('Impression'),
     ];
   }
 
