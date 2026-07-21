@@ -3,3 +3,8 @@ type: module
 description: 'Custom field types used in Digitalia MUNI Arts. Each field type is implemented as separate submodule that has to be enabled to use it.'
 package: digitalia-module-custom_field_types
 core_version_requirement: ^10 || ^11
+version: 1.0
+
+# ---- Interface translation metadata ----
+interface translation project: digitalia_custom_field_types
+interface translation server pattern: modules/custom/digitalia_custom_field_types/translations/%project-%version.%language.po
