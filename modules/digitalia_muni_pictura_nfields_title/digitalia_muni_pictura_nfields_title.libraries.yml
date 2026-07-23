@@ -2,8 +2,3 @@ digitalia_muni_pictura_nfields_title:
   css:
     component:
       css/digitalia-muni-pictura-nfields-title-widget.css: {}
-
-display-details:
-  css:
-    component:
-      css/digitalia-muni-pictura-nfields-display-details.css: {}
