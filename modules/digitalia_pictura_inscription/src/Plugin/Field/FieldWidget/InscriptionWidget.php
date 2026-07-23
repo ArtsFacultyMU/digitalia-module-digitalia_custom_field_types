@@ -29,6 +29,7 @@ final class InscriptionWidget extends WidgetBase {
     $element['text'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Text'),
+      '#rows' => 2,
       '#default_value' => $items[$delta]->text ?? NULL,
     ];
 
@@ -42,24 +43,28 @@ final class InscriptionWidget extends WidgetBase {
     $element['en_translation'] = [
       '#type' => 'textarea',
       '#title' => $this->t('English translation', [], ['context' => 'DigitaliaPicturaInscription']),
+      '#rows' => 2,
       '#default_value' => $items[$delta]->en_translation ?? NULL,
     ];
 
     $element['cs_translation'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Czech translation', [], ['context' => 'DigitaliaPicturaInscription']),
+      '#rows' => 2,
       '#default_value' => $items[$delta]->cs_translation ?? NULL,
     ];
 
     $element['position'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Position'),
+      '#rows' => 2,
       '#default_value' => $items[$delta]->position ?? NULL,
     ];
 
     $element['author'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Author'),
+      '#rows' => 1,
       '#default_value' => $items[$delta]->author ?? NULL,
     ];
 
