@@ -41,7 +41,13 @@ use AllowedLanguageValuesTrait;
 
 # Translations
 
-Import as
+Import individually as
 ```
 drush locale:import cs modules/custom/digitalia-module-custom_field_types/translations/digitalia_custom_field_types-1.0.cs.po
+
+drush locale:import cs modules/custom/digitalia-module-custom_field_types/modules/digitalia_pictura_relation/translations/digitalia_pictura_relation-1.0.cs.po
+```
+or 
+```
+drush locale:update
 ```

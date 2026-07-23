@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: digitalia_muni_pictura_nfields\n"
+"Project-Id-Version: digitalia_muni_pictura_nfields_title\n"
 "POT-Creation-Date: 2026-07-21 12:00+0000\n"
 "PO-Revision-Date: 2026-07-21 12:00+0000\n"
 "Language: cs\n"
@@ -12,17 +12,31 @@ msgstr ""
 msgid "Language"
 msgstr "Jazyk"
 
-mgsid "Title"
+msgctxt "DigitaliaStructuredTitleItem"
+msgid "Title"
 msgstr "Název"
 
-mgsid "Title type"
+msgctxt "DigitaliaStructuredTitleItem"
+msgid "Title type"
 msgstr "Typ názvu"
 
-mgsid "Title ID"
+msgid "Title ID"
 msgstr "ID názvu"
 
-mgsid "Title ID type"
+msgid "Title ID type"
 msgstr "Typ ID názvu"
+
+msgctxt "DigitaliaStructuredTitleItem"
+msgid "Source ID type"
+msgstr "Typ ID zdroje"
+
+msgctxt "DigitaliaStructuredTitleItem"
+msgid "Source ID"
+msgstr "ID zdroje"
+
+msgctxt "DigitaliaStructuredTitleItem"
+msgid "Language of title"
+msgstr "Jazyk názvu"
 
 # src/Plugin/Field/FieldType/StructuredTitleItem.php Title type
 

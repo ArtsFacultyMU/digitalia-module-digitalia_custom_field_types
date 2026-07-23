@@ -30,7 +30,7 @@ msgid "Copy after"
 msgstr "Kopie podle"
 
 msgid "Has copy"
-msgstr "Kopie je"
+msgstr "Má kopii"
 
 msgid "Counterproof for"
 msgstr "Protisk pro"
@@ -65,8 +65,8 @@ msgstr "Místo konání pro"
 msgid "Facsimile of"
 msgstr "Faksimile"
 
-msgid "Facsimile is"
-msgstr "Faksimile je"
+msgid "Has facsimile"
+msgstr "Má faksimile"
 
 msgid "Formerly part of"
 msgstr "Dříve součástí"
@@ -96,7 +96,7 @@ msgid "Larger context for"
 msgstr "Širší kontext pro"
 
 msgid "Partner in set with"
-msgstr "Partner v souboru s"
+msgstr "Ve stejném souboru jako"
 
 msgid "Pendant of"
 msgstr "Protějšek k"
@@ -150,5 +150,5 @@ msgstr "Má studii"
 msgid "Version of"
 msgstr "Je verzí"
 
-msgid "Version is"
+msgid "Has version"
 msgstr "Má verzi"

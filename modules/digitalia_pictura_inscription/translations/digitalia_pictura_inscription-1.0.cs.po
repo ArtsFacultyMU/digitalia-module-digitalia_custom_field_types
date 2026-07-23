@@ -16,9 +16,11 @@ msgstr "Text"
 msgid "Language"
 msgstr "Jazyk"
 
+msgctxt "DigitaliaPicturaInscription"
 msgid "English translation"
 msgstr "Anglický překlad"
 
+msgctxt "DigitaliaPicturaInscription"
 msgid "Czech translation"
 msgstr "Český překlad"
 
@@ -31,8 +33,12 @@ msgstr "Autor"
 msgid "Author ID type"
 msgstr "Typ ID autora"
 
+msgctxt "DigitaliaPicturaInscription"
 msgid "Author ID"
 msgstr "ID autora"
+
+msgid "Note"
+msgstr "Poznámka"
 
 # Type
 msgid "Signature"

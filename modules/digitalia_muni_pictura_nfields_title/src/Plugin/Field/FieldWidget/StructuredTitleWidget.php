@@ -36,14 +36,14 @@ final class StructuredTitleWidget extends WidgetBase {
 
     $element['title_type'] = [
       '#type' => 'select',
-      '#title' => $this->t('Title type'),
+      '#title' => $this->t('Title type', [], ['context' => 'DigitaliaStructuredTitleItem']),
       '#options' => ['' => $this->t('- Select a value -')] + StructuredTitleItem::allowedTitleTypeValues(),
       '#default_value' => $items[$delta]->title_type ?? NULL,
     ];
 
     $element['language'] = [
       '#type' => 'select',
-      '#title' => $this->t('Language of title'),
+      '#title' => $this->t('Language of title', [], ['context' => 'DigitaliaStructuredTitleItem']),
       '#options' => ['' => $this->t('- Select a value -')] + StructuredTitleItem::allowedLanguageValues(),
       '#default_value' => $items[$delta]->language ?? NULL,
     ];
@@ -58,14 +58,14 @@ final class StructuredTitleWidget extends WidgetBase {
 
     $element['id_type'] = [
       '#type' => 'select',
-      '#title' => $this->t('Source ID type'),
+      '#title' => $this->t('Source ID type', [], ['context' => 'DigitaliaStructuredTitleItem']),
       '#options' => ['' => $this->t('- None -')] + StructuredTitleItem::allowedTitleIDTypeValues(),
       '#default_value' => $items[$delta]->id_type ?? NULL,
     ];
 
     $element['source_id'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Source ID'),
+      '#title' => $this->t('Source ID', [], ['context' => 'DigitaliaStructuredTitleItem']),
       '#default_value' => $items[$delta]->source_id ?? NULL,
     ];
 

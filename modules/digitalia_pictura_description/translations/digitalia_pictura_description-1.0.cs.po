@@ -11,3 +11,6 @@ msgstr ""
 # fields
 msgid "Description"
 msgstr "Popis"
+
+msgid "Source ID"
+msgstr "ID zdroje"

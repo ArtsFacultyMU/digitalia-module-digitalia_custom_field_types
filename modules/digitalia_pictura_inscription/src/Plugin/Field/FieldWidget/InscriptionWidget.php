@@ -41,13 +41,13 @@ final class InscriptionWidget extends WidgetBase {
 
     $element['en_translation'] = [
       '#type' => 'textarea',
-      '#title' => $this->t('English translation'),
+      '#title' => $this->t('English translation', [], ['context' => 'DigitaliaPicturaInscription']),
       '#default_value' => $items[$delta]->en_translation ?? NULL,
     ];
 
     $element['cs_translation'] = [
       '#type' => 'textarea',
-      '#title' => $this->t('Czech translation'),
+      '#title' => $this->t('Czech translation', [], ['context' => 'DigitaliaPicturaInscription']),
       '#default_value' => $items[$delta]->cs_translation ?? NULL,
     ];
 
@@ -72,7 +72,7 @@ final class InscriptionWidget extends WidgetBase {
 
     $element['author_id'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Author ID'),
+      '#title' => $this->t('Author ID', [], ['context' => 'DigitaliaPicturaInscription']),
       '#default_value' => $items[$delta]->author_id ?? NULL,
     ];
 
