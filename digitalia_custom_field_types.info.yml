@@ -7,4 +7,4 @@ version: 1.0
 
 # ---- Interface translation metadata ----
 interface translation project: digitalia_custom_field_types
-interface translation server pattern: modules/custom/digitalia_custom_field_types/translations/%project-%version.%language.po
+interface translation server pattern: modules/custom/digitalia-module-custom_field_types/translations/%project-%version.%language.po

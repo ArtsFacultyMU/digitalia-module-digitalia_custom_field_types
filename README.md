@@ -38,3 +38,10 @@ Inside class extending FieldItemBase add
 ```
 use AllowedLanguageValuesTrait;
 ```
+
+# Translations
+
+Import as
+```
+drush locale:import cs modules/custom/digitalia-module-custom_field_types/translations/digitalia_custom_field_types-1.0.cs.po
+```

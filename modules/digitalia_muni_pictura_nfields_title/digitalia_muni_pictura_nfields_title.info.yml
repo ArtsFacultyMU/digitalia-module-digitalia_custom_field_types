@@ -10,4 +10,4 @@ dependencies:
 
 # ---- Interface translation metadata ----
 interface translation project: digitalia_muni_pictura_nfields_title
-interface translation server pattern: modules/custom/digitalia_custom_field_types/modules/digitalia_muni_pictura_nfields_title/translations/%project-%version.%language.po
+interface translation server pattern: modules/custom/digitalia-module-custom_field_types/modules/%project/translations/%project-%version.%language.po
