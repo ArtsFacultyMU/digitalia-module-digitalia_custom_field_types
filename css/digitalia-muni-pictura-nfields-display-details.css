@@ -1,0 +1,42 @@
+img.digitalia-muni-pictura-nfields-info-icon {
+    max-height: 0.75rem;
+}
+
+details.digitalia-muni-pictura-nfields-details {
+  border: none;
+}
+
+.digitalia-muni-pictura-nfields-details > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  list-style: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  background: none;
+}
+
+.digitalia-muni-pictura-nfields-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.digitalia-muni-pictura-nfields-details > summary img.digitalia-muni-pictura-nfields-info-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.digitalia-muni-pictura-nfields-details > summary > span,
+.digitalia-muni-pictura-nfields-details > summary > .details-title {
+  display: none;
+}
+
+details.digitalia-muni-pictura-nfields-details p {
+  margin: 0;
+}
