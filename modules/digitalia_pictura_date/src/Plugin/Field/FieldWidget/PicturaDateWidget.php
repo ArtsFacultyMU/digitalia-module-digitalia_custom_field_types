@@ -26,6 +26,13 @@ final class PicturaDateWidget extends WidgetBase {
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state): array {
 
+    $element['date_type'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Date type'),
+      '#options' => ['' => $this->t('- Select a value -')] + PicturaDateItem::allowedDateTypeValues(),
+      '#default_value' => $items[$delta]->date_type ?? NULL,
+    ];
+
     $element['date'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Date'),
@@ -37,6 +44,12 @@ final class PicturaDateWidget extends WidgetBase {
       '#title' => $this->t('Language'),
       '#options' => ['' => $this->t('- None -')] + PicturaDateItem::allowedLanguageValues(),
       '#default_value' => $items[$delta]->language ?? NULL,
+    ];
+
+    $element['translations'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Translations'),
+      '#default_value' => $items[$delta]->translations ?? NULL,
     ];
 
     $element['earliest_year'] = [
@@ -51,19 +64,6 @@ final class PicturaDateWidget extends WidgetBase {
       '#default_value' => $items[$delta]->latest_year ?? NULL,
     ];
 
-    $element['date_type'] = [
-      '#type' => 'select',
-      '#title' => $this->t('Date type'),
-      '#options' => ['' => $this->t('- Select a value -')] + PicturaDateItem::allowedDateTypeValues(),
-      '#default_value' => $items[$delta]->date_type ?? NULL,
-    ];
-
-    $element['translations'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Translations'),
-      '#default_value' => $items[$delta]->translations ?? NULL,
-    ];
-
     $element['source_id'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Source ID'),
@@ -74,6 +74,10 @@ final class PicturaDateWidget extends WidgetBase {
       '#type' => 'textarea',
       '#title' => $this->t('Source'),
       '#default_value' => $items[$delta]->source ?? NULL,
+      '#rows' => 2,
+      '#attributes' => [
+        'class' => ['digitalia-editor', 'quill-editor-initialized'],
+      ],
     ];
 
     $element['note'] = [
@@ -82,15 +86,10 @@ final class PicturaDateWidget extends WidgetBase {
       '#default_value' => $items[$delta]->note ?? NULL,
     ];
 
-    $element['system_note'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('System note'),
-      '#default_value' => $items[$delta]->system_note ?? NULL,
-    ];
-
     $element['#theme_wrappers'] = ['container', 'form_element'];
     $element['#attributes']['class'][] = 'digitalia-pictura-date-elements';
     $element['#attached']['library'][] = 'digitalia_pictura_date/digitalia_pictura_date';
+    $element['#attached']['library'][] = 'digitalia_custom_field_types/editor';
 
     return $element;
   }

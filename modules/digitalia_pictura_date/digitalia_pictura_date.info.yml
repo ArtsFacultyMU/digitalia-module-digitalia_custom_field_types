@@ -1,5 +1,13 @@
 name: 'Digitalia pictura date'
 type: module
-description: '@todo Add description.'
-package: '@todo Add package'
+description: 'Nfield type for Pictura date information.'
+package: digitalia-module-custom_field_types
 core_version_requirement: ^10
+version: 1.0
+dependencies:
+  - digitalia_custom_field_types
+
+# ---- Interface translation metadata ----
+interface translation project: digitalia_pictura_description
+interface translation server pattern: modules/custom/digitalia-module-custom_field_types/modules/%project/translations/%project-%version.%language.po
+

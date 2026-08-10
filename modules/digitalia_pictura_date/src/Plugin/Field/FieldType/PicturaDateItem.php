@@ -9,6 +9,7 @@ use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemBase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\TypedData\DataDefinition;
+use Drupal\digitalia_custom_field_types\Plugin\Field\FieldType\AllowedLanguageValuesTrait;
 
 /**
  * Defines the 'digitalia_pictura_date' field type.
@@ -22,6 +23,8 @@ use Drupal\Core\TypedData\DataDefinition;
  * )
  */
 final class PicturaDateItem extends FieldItemBase {
+
+  use AllowedLanguageValuesTrait;
 
   /**
    * {@inheritdoc}
@@ -65,7 +68,9 @@ final class PicturaDateItem extends FieldItemBase {
   public function getConstraints(): array {
     $constraints = parent::getConstraints();
 
-    $options['language']['AllowedValues'] = array_keys(PicturaDateItem::allowedLanguageValues());
+    $options['date']['NotBlank'] = [];
+
+    $options['language']['AllowedValues'] = array_keys(self::allowedLanguageValues());
 
     $options['date_type']['AllowedValues'] = array_keys(PicturaDateItem::allowedDateTypeValues());
 
@@ -164,26 +169,25 @@ final class PicturaDateItem extends FieldItemBase {
   }
 
   /**
-   * Returns allowed values for 'language' sub-field.
-   */
-  public static function allowedLanguageValues(): array {
-    // @todo Update allowed values.
-    return [
-      'alpha' => t('Alpha'),
-      'beta' => t('Beta'),
-      'gamma' => t('Gamma'),
-    ];
-  }
-
-  /**
    * Returns allowed values for 'date_type' sub-field.
    */
   public static function allowedDateTypeValues(): array {
-    // @todo Update allowed values.
     return [
-      'alpha' => t('Alpha'),
-      'beta' => t('Beta'),
-      'gamma' => t('Gamma'),
+      'alteration' => t('Alteration'),
+      'broadcast' => t('Broadcast'),
+      'bulk' => t('Bulk'),
+      'commission' => t('Commission'),
+      'creation' => t('Creation'),
+      'design' => t('Design'),
+      'destruction' => t('Destruction'),
+      'discovery' => t('Discovery'),
+      'exhibition' => t('Exhibition'),
+      'inclusive' => t('Inclusive'),
+      'performance' => t('Performance'),
+      'publication' => t('Publication'),
+      'restoration' => t('Restoration'),
+      'view' => t('View'),
+      'other' => t('Other'),
     ];
   }
 
