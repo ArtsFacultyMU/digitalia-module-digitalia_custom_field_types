@@ -1,0 +1,36 @@
+
+# Default value.
+field.value.digitalia_pictura_date:
+  type: mapping
+  label: Default value
+  mapping:
+    date:
+      type: text
+      label: Date
+    language:
+      type: string
+      label: Language
+    earliest_year:
+      type: integer
+      label: Earliest year
+    latest_year:
+      type: integer
+      label: Latest year
+    date_type:
+      type: string
+      label: Date type
+    translations:
+      type: text
+      label: Translations
+    source_id:
+      type: string
+      label: Source ID
+    source:
+      type: text
+      label: Source
+    note:
+      type: text
+      label: Note
+    system_note:
+      type: text
+      label: System note
