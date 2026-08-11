@@ -36,15 +36,15 @@ final class RelationItem extends FieldItemBase {
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition): array {
 
     $properties['name'] = DataDefinition::create('string')
-      ->setLabel(t('Name'));
+      ->setLabel(t('Name of related resource'));
     $properties['type'] = DataDefinition::create('string')
-      ->setLabel(t('Type'));
+      ->setLabel(t('Relation type'));
     $properties['link'] = DataDefinition::create('uri')
-      ->setLabel(t('Link'));
+      ->setLabel(t('ID of related resource')); // use source_id
     $properties['source'] = DataDefinition::create('string')
       ->setLabel(t('Source'));
     $properties['source_id'] = DataDefinition::create('string')
-      ->setLabel(t('Value 5'));
+      ->setLabel(t('Source ID'));
     $properties['note'] = DataDefinition::create('string')
       ->setLabel(t('Note'));
     $properties['system_note'] = DataDefinition::create('string')
@@ -61,11 +61,11 @@ final class RelationItem extends FieldItemBase {
 
     $options['type']['AllowedValues'] = array_keys(RelationItem::allowedTypeValues());
 
-    $options['type']['NotBlank'] = [];
+    //$options['name']['NotBlank'] = [];
+    //$options['type']['NotBlank'] = [];
 
     $constraint_manager = \Drupal::typedDataManager()->getValidationConstraintManager();
     $constraints[] = $constraint_manager->create('ComplexData', $options);
-    // @todo Add more constraints here.
     return $constraints;
   }
 
@@ -194,6 +194,7 @@ final class RelationItem extends FieldItemBase {
       'studyIs' => t('Has study'),
       'versionOf' => t('Version of'),
       'versionIs' => t('Has version'),
+      'textref' => t('Has text reference'), /* field textref, not resource in VRA */
     ];
   }
 

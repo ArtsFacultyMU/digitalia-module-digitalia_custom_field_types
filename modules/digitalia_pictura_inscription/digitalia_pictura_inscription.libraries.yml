@@ -2,3 +2,6 @@ digitalia_pictura_inscription:
   css:
     component:
       css/digitalia-pictura-inscription-widget.css: {}
+  dependencies:
+    - digitalia_custom_field_types/editor
+    - digitalia_custom_field_types/display-details

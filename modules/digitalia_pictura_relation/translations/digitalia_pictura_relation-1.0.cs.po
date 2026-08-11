@@ -12,6 +12,15 @@ msgstr ""
 msgid "Link"
 msgstr "Odkaz"
 
+msgid "Relation type"
+msgstr "Typ vztahu"
+
+msgid "ID of related resource"
+msgstr "ID souvisejícího zdroje"
+
+msgid "Name of related resource"
+msgstr "Název souvisejícího zdroje"
+
 # Type
 
 msgid "Cartoon for"
@@ -152,3 +161,6 @@ msgstr "Je verzí"
 
 msgid "Has version"
 msgstr "Má verzi"
+
+msgid "Has text reference"
+msgstr "Má textovou referenci"

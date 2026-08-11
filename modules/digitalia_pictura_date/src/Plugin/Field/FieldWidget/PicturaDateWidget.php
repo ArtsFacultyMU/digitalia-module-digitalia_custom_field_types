@@ -36,6 +36,7 @@ final class PicturaDateWidget extends WidgetBase {
     $element['date'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Date'),
+      '#rows' => 2,
       '#default_value' => $items[$delta]->date ?? NULL,
     ];
 
@@ -49,6 +50,7 @@ final class PicturaDateWidget extends WidgetBase {
     $element['translations'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Translations'),
+      '#rows' => 2,
       '#default_value' => $items[$delta]->translations ?? NULL,
     ];
 
@@ -83,6 +85,7 @@ final class PicturaDateWidget extends WidgetBase {
     $element['note'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Note'),
+      '#rows' => 2,
       '#default_value' => $items[$delta]->note ?? NULL,
     ];
 

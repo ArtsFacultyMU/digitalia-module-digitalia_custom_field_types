@@ -19,7 +19,7 @@ use Drupal\digitalia_pictura_relation\Plugin\Field\FieldType\RelationItem;
  *   field_types = {"digitalia_pictura_relation"},
  * )
  */
-final class RelationDefaultFormatter extends FormatterBase {
+final class RelationDisplayFormatter extends FormatterBase {
 
   /**
    * {@inheritdoc}
@@ -33,20 +33,31 @@ final class RelationDefaultFormatter extends FormatterBase {
       $value = "";
 
       if ($item->type) {
-        $allowed_values = RelationItem::allowedLanguageValues();         
-        $value .= $allowed_values[$item->type] . " ";
+        $allowed_values = RelationItem::allowedTypeValues();         
+        $value .= $allowed_values[$item->type];
+        $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Relation type') . '</div>' . $allowed_values[$item->type] . '</div>';
       }
 
+      if ($item->name) {
+        if ($value) {
+          $value .= ' ';
+        }
+        $value .= $item->name;
+        $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Name of related resource') . '</div>' . $item->name . '</div>';
+      }
+
+      /*
       if ($item->link) {
-        $value .= '<a href=" . $item->link . '>' . (!empty($item->name)) ? $item->name : $item->link . '</a>';
+        $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('ID of related resource') . '</div><a href=' . $item->link . '>' . $item->link . '</a></div>';
+      }
+      */
+
+      if ($item->source_id) {
+        $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Source ID') . '</div>' . $item->source_id . '</div>';
       }
 
       if ($item->source) {
         $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Source') . '</div>' . $item->source . '</div>';
-      }
-
-      if ($item->source_id) {
-        $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Source ID') . '</div>' . $item->source_id . '</div>';
       }
 
       if ($item->note) {

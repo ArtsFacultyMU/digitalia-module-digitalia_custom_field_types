@@ -26,23 +26,24 @@ final class RelationWidget extends WidgetBase {
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state): array {
 
-    $element['name'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Name'),
-      '#default_value' => $items[$delta]->name ?? NULL,
-    ];
-
     $element['type'] = [
       '#type' => 'select',
-      '#title' => $this->t('Type'),
+      '#title' => $this->t('Relation type'),
       '#options' => ['' => $this->t('- Select a value -')] + RelationItem::allowedTypeValues(),
       '#default_value' => $items[$delta]->type ?? NULL,
     ];
 
-    $element['link'] = [
-      '#type' => 'url',
-      '#title' => $this->t('Link'),
-      '#default_value' => $items[$delta]->link ?? NULL,
+    $element['name'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Name of related resource'),
+      'rows' => 2,
+      '#default_value' => $items[$delta]->name ?? NULL,
+    ];
+
+    $element['source_id'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Source ID'),
+      '#default_value' => $items[$delta]->source_id ?? NULL,
     ];
 
     $element['source'] = [
@@ -55,18 +56,14 @@ final class RelationWidget extends WidgetBase {
       ],
     ];
 
-    $element['source_id'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Source ID'),
-      '#default_value' => $items[$delta]->source_id ?? NULL,
-    ];
-    /*
     $element['note'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Note'),
+      'rows' => 2,
       '#default_value' => $items[$delta]->note ?? NULL,
     ];
 
+    /*
     $element['system_note'] = [
       '#type' => 'textarea',
       '#title' => $this->t('System note'),

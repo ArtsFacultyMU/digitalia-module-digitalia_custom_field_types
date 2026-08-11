@@ -2,3 +2,6 @@ digitalia_pictura_relation:
   css:
     component:
       css/digitalia-pictura-relation-widget.css: {}
+  dependencies:
+    - digitalia_custom_field_types/editor
+    - digitalia_custom_field_types/display-details

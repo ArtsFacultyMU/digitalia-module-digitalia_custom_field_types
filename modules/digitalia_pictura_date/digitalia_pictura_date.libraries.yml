@@ -2,3 +2,6 @@ digitalia_pictura_date:
   css:
     component:
       css/digitalia-pictura-date-widget.css: {}
+  dependencies:
+    - digitalia_custom_field_types/editor
+    - digitalia_custom_field_types/display-details

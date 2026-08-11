@@ -54,7 +54,6 @@ final class StructuredTitleWidget extends WidgetBase {
       '#title' => $this->t('Internal Source ID'),
       '#default_value' => $items[$delta]->id ?? NULL,
     ];
-    */
 
     $element['id_type'] = [
       '#type' => 'select',
@@ -62,6 +61,7 @@ final class StructuredTitleWidget extends WidgetBase {
       '#options' => ['' => $this->t('- None -')] + StructuredTitleItem::allowedTitleIDTypeValues(),
       '#default_value' => $items[$delta]->id_type ?? NULL,
     ];
+    */
 
     $element['source_id'] = [
       '#type' => 'textfield',
