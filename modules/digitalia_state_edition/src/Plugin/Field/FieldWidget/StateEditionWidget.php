@@ -29,12 +29,14 @@ final class StateEditionWidget extends WidgetBase {
     $element['name'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Name'),
+      '#rows' => 2,
       '#default_value' => $items[$delta]->name ?? NULL,
     ];
 
     $element['description'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Description'),
+      '#rows' => 2,
       '#default_value' => $items[$delta]->description ?? NULL,
     ];
 
