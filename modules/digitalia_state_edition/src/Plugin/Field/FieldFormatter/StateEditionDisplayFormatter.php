@@ -78,7 +78,9 @@ final class StateEditionDisplayFormatter extends FormatterBase {
         ];
       }
 
-      $element[$delta] = $build;
+      if (!empty($build)) {
+        $element[$delta] = $build;
+      }
     }
 
     return $element;
