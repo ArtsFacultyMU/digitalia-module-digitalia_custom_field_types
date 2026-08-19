@@ -1,0 +1,71 @@
+# Field instance.
+field.field_settings.digitalia_field_geolocation:
+  type: mapping
+  label: Example field settings
+  mapping:
+    allowed_type_values:
+      type: string
+      label: Allowed Type Values
+
+# Default value.
+field.value.digitalia_field_geolocation:
+  type: mapping
+  label: Default value
+  mapping:
+    type:
+      type: string
+      label: Type
+    place:
+      type: string
+      label: Place
+    url:
+      type: uri
+      label: URL
+    country:
+      type: string
+      label: Country
+    adm1:
+      type: string
+      label: adm1
+    adm2:
+      type: string
+      label: adm2
+    adm3:
+      type: string
+      label: adm3
+    adm4:
+      type: string
+      label: adm4
+    adm5:
+      type: string
+      label: adm5
+    lat:
+      type: string
+      label: Lat
+    long:
+      type: string
+      label: Long
+    note:
+      type: text
+      label: Note
+    note_system:
+      type: text
+      label: Note system
+
+# Field widget.
+field.widget.settings.digitalia_field_geolocation:
+  type: mapping
+  label: Example widget settings
+  mapping:
+    foo:
+      type: string
+      label: Foo
+
+# Field formatter.
+field.formatter.settings.digitalia_field_geolocation_default:
+  type: mapping
+  label: Example formatter settings
+  mapping:
+    foo:
+      type: string
+      label: Foo

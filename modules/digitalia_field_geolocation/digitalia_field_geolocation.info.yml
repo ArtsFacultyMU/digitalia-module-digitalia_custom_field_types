@@ -1,0 +1,5 @@
+name: 'Digitalia field Geolocation'
+type: module
+description: '@todo Add description.'
+package: digitalia_custom_field_types
+core_version_requirement: ^10

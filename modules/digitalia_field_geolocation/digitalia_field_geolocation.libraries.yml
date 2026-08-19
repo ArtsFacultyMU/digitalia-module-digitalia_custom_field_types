@@ -1,0 +1,4 @@
+digitalia_field_geolocation:
+  css:
+    component:
+      css/digitalia-field-geolocation-widget.css: {}

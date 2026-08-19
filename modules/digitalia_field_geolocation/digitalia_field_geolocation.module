@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * Implements hook_node_presave().
+ * Populates all geolocation fields with data from the GeoNames API before saving the node.
+ */
+function digitalia_field_geolocation_node_presave($node) {
+  $geonames_service = \Drupal::service('digitalia_field_geolocation.geonames_service');
+  foreach ($node->getFieldDefinitions() as $field_name => $field_definition) {
+    if ($field_definition->getType() === 'digitalia_field_geolocation') {
+      $field_items = $node->get($field_name)->getValue();
+      foreach ($field_items as $delta => &$item) {
+        if (!empty($item['url'])) {
+          $location_data = $geonames_service->getLocationData($item['url']);
+          if (empty($location_data)) {
+            \Drupal::logger('digitalia_field_geolocation')->error('No location data returned from GeoNames API for URL: @url', ['@url' => $item['url']]);
+            continue;
+          }
+          // Populate the other fields with the data returned from the API
+          foreach ($location_data as $key => $value) {
+            $item[$key] = $value;
+          }
+
+          \Drupal::logger('digitalia_field_geolocation')->info('Populated geolocation data for field @field on node @nid.', ['@field' => $field_name, '@nid' => $node->id()]);
+        }
+      }
+      $node->set($field_name, $field_items);
+    }
+  }
+}
