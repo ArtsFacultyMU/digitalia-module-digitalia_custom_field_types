@@ -55,16 +55,19 @@ final class DigitaliaGeolocationWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state): array {
-
     $schema = $this->fieldDefinition->getSetting('allowed_type_schema') ?? '';
     switch ($schema) {
       case "VRA":
-        $allowed_type_values = array_keys(DigitaliaGeolocationItem::allowedVraTypeValues());
+        $allowed_type_values = DigitaliaGeolocationItem::allowedVraTypeValues();
+        break;
       case "CCMM":
-        $allowed_type_values = array_keys(DigitaliaGeolocationItem::allowedCcmmTypeValues());
+        $allowed_type_values = DigitaliaGeolocationItem::allowedCcmmTypeValues();
+        break;
       default:
         $allowed_type_values = [];
+        break;
     }
+
     if (filter_var($this->getSetting('display_type'), FILTER_VALIDATE_BOOLEAN)) {
       $element['type'] = [
         '#type' => 'select',
