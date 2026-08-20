@@ -1,5 +1,13 @@
 name: 'Digitalia field Geolocation'
 type: module
-description: '@todo Add description.'
+description: 'Digitalia Geolocation field with Geonames integration.'
 package: digitalia_custom_field_types
 core_version_requirement: ^10
+version: 1.0
+dependencies:
+  - digitalia_custom_field_types
+
+
+# ---- Interface translation metadata ----
+interface translation project: digitalia_field_geolocation
+interface translation server pattern: modules/custom/digitalia-module-custom_field_types/modules/%project/translations/%project-%version.%language.po
