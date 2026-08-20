@@ -25,17 +25,19 @@ final class DigitaliaGeolocationWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public static function defaultSettings(): array {
-    return ['foo' => 'bar'] + parent::defaultSettings();
+    return ['display_type' => FALSE] + parent::defaultSettings();
   }
 
   /**
    * {@inheritdoc}
    */
   public function settingsForm(array $form, FormStateInterface $form_state): array {
-    $element['foo'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Foo'),
-      '#default_value' => $this->getSetting('foo'),
+    $element['display_type'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Display type'),
+      '#default_value' => $this->getSetting('display_type'),
+      '#return_value' => 1,
+      '#description' => $this->t('If checked, type field will be displayed.'),
     ];
     return $element;
   }
@@ -45,7 +47,7 @@ final class DigitaliaGeolocationWidget extends WidgetBase {
    */
   public function settingsSummary(): array {
     return [
-      $this->t('Foo: @foo', ['@foo' => $this->getSetting('foo')]),
+      $this->t('Display type: @type_value', ['@type_value' => $this->getSetting('display_type')]),
     ];
   }
 
@@ -53,16 +55,27 @@ final class DigitaliaGeolocationWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state): array {
+    $schema = $this->fieldDefinition->getSetting('allowed_type_schema') ?? '';
+    switch ($schema) {
+      case "VRA":
+        $allowed_type_values = DigitaliaGeolocationItem::allowedVraTypeValues();
+        break;
+      case "CCMM":
+        $allowed_type_values = DigitaliaGeolocationItem::allowedCcmmTypeValues();
+        break;
+      default:
+        $allowed_type_values = [];
+        break;
+    }
 
-    $allowed_type_values = $this->fieldDefinition->getSetting('allowed_type_values') ?? '';
-    $allowed_type_values = explode("\n", $allowed_type_values);
-
-    $element['type'] = [
-      '#type' => 'select',
-      '#title' => $this->t('Type'),
-      '#options' => ['' => $this->t('- None -')] + $allowed_type_values,
-      '#default_value' => $items[$delta]->type ?? NULL,
-    ];
+    if (filter_var($this->getSetting('display_type'), FILTER_VALIDATE_BOOLEAN)) {
+      $element['type'] = [
+        '#type' => 'select',
+        '#title' => $this->t('Type'),
+        '#options' => ['' => $this->t('- None -')] + $allowed_type_values,
+        '#default_value' => $items[$delta]->type ?? NULL,
+      ];
+    }
 
     $element['place'] = [
       '#type' => 'textfield',
@@ -72,7 +85,7 @@ final class DigitaliaGeolocationWidget extends WidgetBase {
 
     $element['url'] = [
       '#type' => 'url',
-      '#title' => $this->t('URL'),
+      '#title' => $this->t('GeoNames URL'),
       '#default_value' => $items[$delta]->url ?? NULL,
     ];
 
@@ -138,14 +151,14 @@ final class DigitaliaGeolocationWidget extends WidgetBase {
       '#default_value' => $items[$delta]->note ?? NULL,
       '#rows' => 2,
     ];
-
+    /*
     $element['note_system'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Note system'),
       '#default_value' => $items[$delta]->note_system ?? NULL,
       '#rows' => 2,
     ];
-
+    */
     $element['#theme_wrappers'] = ['container', 'form_element'];
     $element['#attributes']['class'][] = 'digitalia-field-geolocation-elements';
     $element['#attached']['library'][] = 'digitalia_field_geolocation/digitalia_field_geolocation';

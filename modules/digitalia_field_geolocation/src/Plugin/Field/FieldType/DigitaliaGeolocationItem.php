@@ -13,7 +13,6 @@ use Drupal\Core\TypedData\DataDefinition;
 
 /**
  * Defines the 'digitalia_field_geolocation' field type.
- *
  * @FieldType(
  *   id = "digitalia_field_geolocation",
  *   label = @Translation("Digitalia Geolocation"),
@@ -28,22 +27,26 @@ final class DigitaliaGeolocationItem extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function defaultFieldSettings(): array {
-    return [
-      'allowed_type_values' => '',
-    ] + parent::defaultFieldSettings();
+    $settings = ['allowed_type_schema' => ''];
+    return $settings + parent::defaultFieldSettings();
   }
-  
+
   /**
    * {@inheritdoc}
    */
   public function fieldSettingsForm(array $form, FormStateInterface $form_state): array {
     $settings = $this->getSettings();
 
-    $element['allowed_type_values'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Allowed type values'),
-      '#default_value' => $this->getSetting('allowed_type_values'),
-      '#description' => $this->t('Enter one value per line.'),
+    $element['allowed_type_schema'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Allowed location type schemas'),
+      '#options' => [
+        '' => t('None'),
+        'VRA' => t('VRA'),
+        'CCMM' => t('CCMM'),
+      ],
+      '#default_value' => $settings['allowed_type_schema'] ?? '',
+      '#description' => $this->t('Select which location type schemas should be allowed for this field.'),
     ];
 
     return $element;
@@ -60,7 +63,6 @@ final class DigitaliaGeolocationItem extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition): array {
-
     $properties['type'] = DataDefinition::create('string')
       ->setLabel(t('Type'));
     $properties['place'] = DataDefinition::create('string')
@@ -96,12 +98,9 @@ final class DigitaliaGeolocationItem extends FieldItemBase {
    */
   public function getConstraints(): array {
     $constraints = parent::getConstraints();
-
-    $options['type']['AllowedValues'] = array_keys(DigitaliaGeolocationItem::allowedTypeValues());
-
+    $options['type']['AllowedValues'] = array_keys(self::allAllowedTypeValues());
     $constraint_manager = \Drupal::typedDataManager()->getValidationConstraintManager();
     $constraints[] = $constraint_manager->create('ComplexData', $options);
-    // @todo Add more constraints here.
     return $constraints;
   }
 
@@ -109,68 +108,25 @@ final class DigitaliaGeolocationItem extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function schema(FieldStorageDefinitionInterface $field_definition): array {
-
     $columns = [
-      'type' => [
-        'type' => 'varchar',
-        'length' => 255,
-      ],
-      'place' => [
-        'type' => 'varchar',
-        'length' => 255,
-      ],
-      'url' => [
-        'type' => 'varchar',
-        'length' => 2048,
-      ],
-      'country' => [
-        'type' => 'varchar',
-        'length' => 255,
-      ],
-      'adm1' => [
-        'type' => 'varchar',
-        'length' => 255,
-      ],
-      'adm2' => [
-        'type' => 'varchar',
-        'length' => 255,
-      ],
-      'adm3' => [
-        'type' => 'varchar',
-        'length' => 255,
-      ],
-      'adm4' => [
-        'type' => 'varchar',
-        'length' => 255,
-      ],
-      'adm5' => [
-        'type' => 'varchar',
-        'length' => 255,
-      ],
-      'lat' => [
-        'type' => 'varchar',
-        'length' => 255,
-      ],
-      'long' => [
-        'type' => 'varchar',
-        'length' => 255,
-      ],
-      'note' => [
-        'type' => 'text',
-        'size' => 'big',
-      ],
-      'note_system' => [
-        'type' => 'text',
-        'size' => 'big',
-      ],
+      'type' => ['type' => 'varchar', 'length' => 255],
+      'place' => ['type' => 'varchar', 'length' => 255],
+      'url' => ['type' => 'varchar', 'length' => 2048],
+      'country' => ['type' => 'varchar', 'length' => 255],
+      'adm1' => ['type' => 'varchar', 'length' => 255],
+      'adm2' => ['type' => 'varchar', 'length' => 255],
+      'adm3' => ['type' => 'varchar', 'length' => 255],
+      'adm4' => ['type' => 'varchar', 'length' => 255],
+      'adm5' => ['type' => 'varchar', 'length' => 255],
+      'lat' => ['type' => 'varchar', 'length' => 255],
+      'long' => ['type' => 'varchar', 'length' => 255],
+      'note' => ['type' => 'text', 'size' => 'big'],
+      'note_system' => ['type' => 'text', 'size' => 'big'],
     ];
 
-    $schema = [
+    return [
       'columns' => $columns,
-      // @DCG Add indexes here if necessary.
     ];
-
-    return $schema;
   }
 
   /**
@@ -180,7 +136,7 @@ final class DigitaliaGeolocationItem extends FieldItemBase {
 
     $random = new Random();
 
-    $values['type'] = array_rand(self::allowedTypeValues());
+    $values['type'] = array_rand(self::allAllowedTypeValues());
 
     $values['place'] = $random->word(mt_rand(1, 255));
 
@@ -193,38 +149,52 @@ final class DigitaliaGeolocationItem extends FieldItemBase {
     $values['url'] = "$protocol://$www.$domain.$tld";
 
     $values['country'] = $random->word(mt_rand(1, 255));
-
     $values['adm1'] = $random->word(mt_rand(1, 255));
-
     $values['adm2'] = $random->word(mt_rand(1, 255));
-
     $values['adm3'] = $random->word(mt_rand(1, 255));
-
     $values['adm4'] = $random->word(mt_rand(1, 255));
-
     $values['adm5'] = $random->word(mt_rand(1, 255));
 
-    $values['lat'] = $random->word(mt_rand(1, 255));
-
-    $values['long'] = $random->word(mt_rand(1, 255));
+    $values['lat'] = sprintf('%F', mt_rand(-90000000, 90000000) / 1000000);
+    $values['long'] = sprintf('%F', mt_rand(-180000000, 180000000) / 1000000);
 
     $values['note'] = $random->paragraphs(5);
-
     $values['note_system'] = $random->paragraphs(5);
 
     return $values;
   }
 
-  /**
-   * Returns allowed values for 'type' sub-field.
-   */
-  public static function allowedTypeValues(): array {
-    // @todo Update allowed values.
+  public static function allowedVraTypeValues(): array {
     return [
-      'alpha' => t('Alpha'),
-      'beta' => t('Beta'),
-      'gamma' => t('Gamma'),
+      'creation'           => t('Creation'),
+      'discovery'          => t('Discovery'),
+      'exhibition'         => t('Exhibition'),
+      'formerOwner'        => t('Former Owner'),
+      'formerRepository'   => t('Former Repository'),
+      'formerSite'         => t('Former Site'),
+      'installation'       => t('Installation'),
+      'intended'           => t('Intended'),
+      'owner'              => t('Owner'),
+      'performance'        => t('Performance'),
+      'publication'        => t('Publication'),
+      'repository'         => t('Repository'),
+      'site'               => t('Site'),
+      'other'              => t('Other'),
     ];
+  }
+
+  public static function allowedCcmmTypeValues(): array {
+    return [
+      'collected_in'           => t('Collected in'),
+      'other'                  => t('Other'),
+      'processed_at_location' => t('Processed at location'),
+      'refers_to_the_location'=> t('Refers to the location'),
+      'stored_at_location'    => t('Stored at location'),
+    ];
+  }
+
+  public static function allAllowedTypeValues(): array {
+    return array_merge(self::allowedCcmmTypeValues(), self::allowedVraTypeValues());
   }
 
 }
