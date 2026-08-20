@@ -1,0 +1,16 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: digitalia_pictura_description\n"
+"POT-Creation-Date: 2026-07-21 12:00+0000\n"
+"PO-Revision-Date: 2026-07-21 12:00+0000\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# fields
+msgid "Description"
+msgstr "Popis"
+
+msgid "Source ID"
+msgstr "ID zdroje"

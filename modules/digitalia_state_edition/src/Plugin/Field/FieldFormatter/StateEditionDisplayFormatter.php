@@ -1,0 +1,89 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\digitalia_state_edition\Plugin\Field\FieldFormatter;
+
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Field\FormatterBase;
+use Drupal\Core\Render\Markup;
+use Drupal\digitalia_state_edition\Plugin\Field\FieldType\StateEditionItem;
+
+/**
+ * Plugin implementation of the 'digitalia_state_edition_display' formatter.
+ *
+ * @FieldFormatter(
+ *   id = "digitalia_state_edition_display",
+ *   label = @Translation("Display"),
+ *   field_types = {"digitalia_state_edition"},
+ * )
+ */
+final class StateEditionDisplayFormatter extends FormatterBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function viewElements(FieldItemListInterface $items, $langcode): array {
+    $element = [];
+
+    foreach ($items as $delta => $item) {
+      $build = [];
+      $details = "";
+
+      if ($item->description) {
+        $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Description') . '</div>' . $item->description . '</div>';
+      }
+
+      if ($item->type) {
+        $allowed_values = StateEditionItem::allowedTypeValues();
+        $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Type') . '</div>' . $allowed_values[$item->type] . '</div>';
+      }
+
+      if ($item->num) {
+        $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Number') . '</div>' . $item->num . '</div>';
+      }
+
+      if ($item->count) {
+        $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Count') . '</div>' . $item->count . '</div>';
+      }
+
+      if ($item->source) {
+        $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Source') . '</div>' . $item->source . '</div>';
+      }
+
+      if ($item->source_id) {
+        $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Source ID') . '</div>' . $item->source_id . '</div>';
+      }
+
+      if ($item->note) {
+        $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Note') . '</div>' . $item->note . '</div>';
+      }
+
+      if ($item->name) {
+        $module_path = \Drupal::service('extension.list.module')->getPath('digitalia_custom_field_types');
+        $img_src = '/' . $module_path . '/assets/info.svg';
+        $build['#attached']['library'][] = 'digitalia_custom_field_types/display-details';
+
+        $build['display_value'] = [
+          '#type' => 'details',
+          '#title' => Markup::create($item->name . ' <img src="' . $img_src . '" alt="' . $this->t('Info')->render() . '" class="digitalia-muni-pictura-nfields-info-icon" />'),
+          '#open' => FALSE,
+          'content' => [
+            '#type' => 'item',
+            '#markup' => $details,
+          ],
+          '#attributes' => [
+            'class' => ['digitalia-muni-pictura-nfields-details']
+          ],
+        ];
+      }
+
+      if (!empty($build)) {
+        $element[$delta] = $build;
+      }
+    }
+
+    return $element;
+  }
+
+}

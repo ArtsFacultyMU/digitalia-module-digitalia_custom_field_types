@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: digitalia_pictura_date\n"
+"POT-Creation-Date: 2026-08-10 12:00+0000\n"
+"PO-Revision-Date: 2026-08-10 12:00+0000\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Date"
+msgstr "Datace"
+
+msgid "Language"
+msgstr "Jazyk"
+
+msgid "Earliest year"
+msgstr "Nedřívější rok"
+
+msgid "Latest year"
+msgstr "Nejzazší rok"
+
+msgid "Date type"
+msgstr "Typ data"
+
+msgid "Translations"
+msgstr "Překlady"
+
+msgid "Source ID"
+msgstr "ID zdroje"
+
+msgid "Source"
+msgstr "Zdroj"
+
+msgid "Note"
+msgstr "Poznámka"
+
+msgid "Alteration"
+msgstr "Změna"
+
+msgid "Broadcast"
+msgstr "Vysílání"
+
+msgid "Bulk"
+msgstr "Většina"
+
+msgid "Commission"
+msgstr "Zakázka"
+
+msgid "Creation"
+msgstr "Vytvoření"
+
+msgid "Design"
+msgstr "Návrh"
+
+msgid "Destruction"
+msgstr "Zánik"
+
+msgid "Discovery"
+msgstr "Objev"
+
+msgid "Exhibition"
+msgstr "Výstava"
+
+msgid "Inclusive"
+msgstr "Včetně"
+
+msgid "Performance"
+msgstr "Představení"
+
+msgid "Publication"
+msgstr "Publikace"
+
+msgid "Restoration"
+msgstr "Restaurování"
+
+msgid "View"
+msgstr "Zobrazení"
+
+msgid "Other"
+msgstr "Jiné"

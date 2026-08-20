@@ -1,0 +1,33 @@
+
+# Default value.
+field.value.digitalia_state_edition:
+  type: mapping
+  label: Default value
+  mapping:
+    name:
+      type: text
+      label: Name
+    description:
+      type: text
+      label: Description
+    type:
+      type: string
+      label: Type
+    num:
+      type: integer
+      label: Number
+    count:
+      type: integer
+      label: Count
+    source:
+      type: text
+      label: Source
+    source_id:
+      type: string
+      label: Source ID
+    note:
+      type: text
+      label: Note
+    system_note:
+      type: text
+      label: System note

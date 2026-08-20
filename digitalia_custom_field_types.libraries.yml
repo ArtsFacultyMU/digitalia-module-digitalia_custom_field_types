@@ -1,0 +1,19 @@
+editor:
+  js:
+    https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js:
+      type: external
+      minified: true
+    js/editor.js: {}
+  css:
+    theme:
+      https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css:
+        type: external
+      css/digitalia_custom_field_types_editor.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+display-details:
+  css:
+    component:
+      css/digitalia-muni-pictura-nfields-display-details.css: {}

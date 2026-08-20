@@ -1,0 +1,13 @@
+name: 'Digitalia muni Pictura nfields title'
+type: module
+description: 'Title structured field created for Pictura based on VRA.'
+package: digitalia-module-custom_field_types
+core_version_requirement: ^10
+version: 1.0
+dependencies:
+  - digitalia_custom_field_types
+
+
+# ---- Interface translation metadata ----
+interface translation project: digitalia_muni_pictura_nfields_title
+interface translation server pattern: modules/custom/digitalia-module-custom_field_types/modules/%project/translations/%project-%version.%language.po

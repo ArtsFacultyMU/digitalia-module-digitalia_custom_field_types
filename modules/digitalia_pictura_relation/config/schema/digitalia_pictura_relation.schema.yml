@@ -1,0 +1,27 @@
+
+# Default value.
+field.value.digitalia_pictura_relation:
+  type: mapping
+  label: Default value
+  mapping:
+    name:
+      type: text
+      label: Name
+    type:
+      type: string
+      label: Type
+    link:
+      type: uri
+      label: Link
+    source:
+      type: text
+      label: Source
+    source_id:
+      type: string
+      label: Value 5
+    note:
+      type: text
+      label: Note
+    system_note:
+      type: text
+      label: System note

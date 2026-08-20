@@ -1,0 +1,11 @@
+/* pictura-nfields-title-elements */
+
+.digitalia-muni-pictura-nfields-title-elements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.digitalia-muni-pictura-nfields-title-elements select {
+    width: 100%;
+}

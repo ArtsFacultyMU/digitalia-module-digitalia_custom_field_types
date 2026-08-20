@@ -1,0 +1,42 @@
+
+# Default value.
+field.value.digitalia_pictura_inscription:
+  type: mapping
+  label: Default value
+  mapping:
+    text:
+      type: text
+      label: Text
+    language:
+      type: string
+      label: Language
+    en_translation:
+      type: text
+      label: English translation
+    cs_translation:
+      type: text
+      label: Czech translation
+    position:
+      type: text
+      label: Position
+    author:
+      type: text
+      label: Author
+    author_vocab:
+      type: string
+      label: Author ID type
+    author_id:
+      type: string
+      label: Author ID
+    source:
+      type: text
+      label: Source
+    source_id:
+      type: string
+      label: Source ID
+    note:
+      type: text
+      label: Note
+    system_note:
+      type: text
+      label: System note

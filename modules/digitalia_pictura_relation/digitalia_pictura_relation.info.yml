@@ -1,0 +1,12 @@
+name: 'Digitalia pictura relation'
+type: module
+description: 'Custom field type used in Digitalia MUNI Arts for pictura relation information. This field type is implemented as a separate submodule that has to be enabled to use it.'
+package: digitalia-module-custom_field_types
+core_version_requirement: ^10
+version: 1.0
+dependencies:
+  - digitalia_custom_field_types
+
+# ---- Interface translation metadata ----
+interface translation project: digitalia_pictura_relation
+interface translation server pattern: modules/custom/digitalia-module-custom_field_types/modules/%project/translations/%project-%version.%language.po

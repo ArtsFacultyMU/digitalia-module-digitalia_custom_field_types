@@ -1,0 +1,63 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: digitalia_pictura_inscription\n"
+"POT-Creation-Date: 2026-07-21 12:00+0000\n"
+"PO-Revision-Date: 2026-07-21 12:00+0000\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Fields
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Language"
+msgstr "Jazyk"
+
+msgctxt "DigitaliaPicturaInscription"
+msgid "English translation"
+msgstr "Anglický překlad"
+
+msgctxt "DigitaliaPicturaInscription"
+msgid "Czech translation"
+msgstr "Český překlad"
+
+msgid "Position"
+msgstr "Pozice"
+
+msgid "Author"
+msgstr "Autor"
+
+msgid "Author ID type"
+msgstr "Typ ID autora"
+
+msgctxt "DigitaliaPicturaInscription"
+msgid "Author ID"
+msgstr "ID autora"
+
+msgid "Note"
+msgstr "Poznámka"
+
+# Type
+msgid "Signature"
+msgstr "Podpis"
+
+msgid "Mark"
+msgstr "Značka"
+
+msgid "Caption"
+msgstr "Popisek"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Translation"
+msgstr "Překlad"
+
+msgid "Other"
+msgstr "Jiné"

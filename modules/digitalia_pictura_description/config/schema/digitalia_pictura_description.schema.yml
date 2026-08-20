@@ -1,0 +1,42 @@
+
+# Default value.
+field.value.digitalia_pictura_description:
+  type: mapping
+  label: Default value
+  mapping:
+    description:
+      type: text
+      label: Description
+    language:
+      type: string
+      label: Language
+    source:
+      type: text
+      label: Source
+    source_id:
+      type: string
+      label: Source ID
+    note:
+      type: text
+      label: Note
+    system_note:
+      type: text
+      label: System note
+
+# Field widget.
+field.widget.settings.digitalia_pictura_description:
+  type: mapping
+  label: Example widget settings
+  mapping:
+    foo:
+      type: string
+      label: Foo
+
+# Field formatter.
+field.formatter.settings.digitalia_pictura_description_default:
+  type: mapping
+  label: Example formatter settings
+  mapping:
+    foo:
+      type: string
+      label: Foo

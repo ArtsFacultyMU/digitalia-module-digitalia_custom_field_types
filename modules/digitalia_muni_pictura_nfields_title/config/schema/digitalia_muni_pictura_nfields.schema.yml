@@ -1,0 +1,60 @@
+
+# Field instance.
+field.field_settings.digitalia_muni_pictura_nfields_title:
+  type: mapping
+  label: Example field settings
+  mapping:
+    bar:
+      type: string
+      label: Bar
+
+# Default value.
+field.value.digitalia_muni_pictura_nfields_title:
+  type: mapping
+  label: Default value
+  mapping:
+    title:
+      type: text
+      label: Title
+    title_type:
+      type: string
+      label: Title type
+    language:
+      type: string
+      label: Language
+    id:
+      type: string
+      label: Title ID
+    id_type:
+      type: string
+      label: Title ID type
+    source:
+      type: text
+      label: Source
+    source_id:
+      type: string
+      label: source_id
+    note:
+      type: text
+      label: Note
+    system_note:
+      type: text
+      label: System note
+
+# Field widget.
+field.widget.settings.digitalia_muni_pictura_nfields_title:
+  type: mapping
+  label: Example widget settings
+  mapping:
+    foo:
+      type: string
+      label: Foo
+
+# Field formatter.
+field.formatter.settings.digitalia_muni_pictura_nfields_title_default:
+  type: mapping
+  label: Example formatter settings
+  mapping:
+    foo:
+      type: string
+      label: Foo

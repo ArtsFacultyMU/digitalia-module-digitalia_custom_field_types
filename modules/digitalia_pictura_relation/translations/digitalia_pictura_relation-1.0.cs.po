@@ -1,0 +1,166 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: digitalia_pictura_relation\n"
+"POT-Creation-Date: 2026-07-21 12:00+0000\n"
+"PO-Revision-Date: 2026-07-21 12:00+0000\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Fields
+msgid "Link"
+msgstr "Odkaz"
+
+msgid "Relation type"
+msgstr "Typ vztahu"
+
+msgid "ID of related resource"
+msgstr "ID souvisejícího zdroje"
+
+msgid "Name of related resource"
+msgstr "Název souvisejícího zdroje"
+
+# Type
+
+msgid "Cartoon for"
+msgstr "Kreslený návrh pro"
+
+msgid "Has cartoon"
+msgstr "Má kreslený návrh"
+
+msgid "Component of"
+msgstr "Součástí"
+
+msgid "Has component"
+msgstr "Má část"
+
+msgid "Copy after"
+msgstr "Kopie podle"
+
+msgid "Has copy"
+msgstr "Má kopii"
+
+msgid "Counterproof for"
+msgstr "Protisk pro"
+
+msgid "Has counterproof"
+msgstr "Má protisk"
+
+msgid "Depicts"
+msgstr "Zobrazuje"
+
+msgid "Depicted in"
+msgstr "Zobrazeno v"
+
+msgid "Derived from"
+msgstr "Odvozeno z"
+
+msgid "Source for"
+msgstr "Zdroj pro"
+
+msgid "Designed for"
+msgstr "Navrženo pro"
+
+msgid "Has context"
+msgstr "Má kontext"
+
+msgid "Exhibited at"
+msgstr "Vystaveno v"
+
+msgid "Venue for"
+msgstr "Místo konání pro"
+
+msgid "Facsimile of"
+msgstr "Faksimile"
+
+msgid "Has facsimile"
+msgstr "Má faksimile"
+
+msgid "Formerly part of"
+msgstr "Dříve součástí"
+
+msgid "Formerly larger context for"
+msgstr "Dříve širší kontext pro"
+
+msgid "Image of"
+msgstr "Obraz"
+
+msgid "Has image"
+msgstr "Je zobrazeno"
+
+msgid "Mate of"
+msgstr "Protějšek"
+
+msgid "Model for"
+msgstr "Model pro"
+
+msgid "Has model"
+msgstr "Má model"
+
+msgid "Part of"
+msgstr "Část"
+
+msgid "Larger context for"
+msgstr "Širší kontext pro"
+
+msgid "Partner in set with"
+msgstr "Ve stejném souboru jako"
+
+msgid "Pendant of"
+msgstr "Protějšek k"
+
+msgid "Plan for"
+msgstr "Plán pro"
+
+msgid "Has plan"
+msgstr "Má plán"
+
+msgid "Preparatory for"
+msgstr "Přípravná práce pro"
+
+msgid "Based on"
+msgstr "Založeno na"
+
+msgid "Printing plate for"
+msgstr "Tisková deska pro"
+
+msgid "Printing plate"
+msgstr "Tisková deska"
+
+msgid "Prototype for"
+msgstr "Prototyp pro"
+
+msgid "Has prototype"
+msgstr "Má prototyp"
+
+msgid "Related to"
+msgstr "Související s"
+
+msgid "Relief for"
+msgstr "Reliéf pro"
+
+msgctxt "digitalia-pictura-relation"
+msgid "Has impression"
+msgstr "Má otisk"
+
+msgid "Replica of"
+msgstr "Replika"
+
+msgid "Has replica"
+msgstr "Má repliku"
+
+msgid "Study for"
+msgstr "Studie pro"
+
+msgid "Has study"
+msgstr "Má studii"
+
+msgid "Version of"
+msgstr "Je verzí"
+
+msgid "Has version"
+msgstr "Má verzi"
+
+msgid "Has text reference"
+msgstr "Má textovou referenci"

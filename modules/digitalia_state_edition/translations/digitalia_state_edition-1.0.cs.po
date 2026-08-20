@@ -1,0 +1,36 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: digitalia_pictura_relation\n"
+"POT-Creation-Date: 2026-07-21 12:00+0000\n"
+"PO-Revision-Date: 2026-07-21 12:00+0000\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Fields
+msgid "Name"
+msgstr "Název"
+
+msgid "Description"
+msgstr "Popis"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Number"
+msgstr "Číslo"
+
+msgid "Count"
+msgstr "Množství"
+
+# State edition type
+
+msgid "State"
+msgstr "Stav"
+
+msgid "Edition"
+msgstr "Edice"
+
+msgid "Impression"
+msgstr "Tisk"
