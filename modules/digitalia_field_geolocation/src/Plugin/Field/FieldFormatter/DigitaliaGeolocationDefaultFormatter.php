@@ -58,7 +58,9 @@ final class DigitaliaGeolocationDefaultFormatter extends FormatterBase {
     foreach ($items as $delta => $item) {
 
       if ($item->type) {
-        $allowed_values = DigitaliaGeolocationItem::allowedTypeValues();
+        $allowed_values = DigitaliaGeolocationItem::allAllowedTypeValues();
+        $custom_allowed_values = DigitaliaGeolocationItem::formatAllowedTypeValues($this->fieldDefinition->getSetting('allowed_type_custom_values') ?? '');
+        $allowed_values = array_merge($allowed_values, $custom_allowed_values);
         $element[$delta]['type'] = [
           '#type' => 'item',
           '#title' => $this->t('Type'),

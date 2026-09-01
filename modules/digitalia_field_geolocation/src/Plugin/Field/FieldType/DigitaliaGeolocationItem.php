@@ -27,7 +27,7 @@ final class DigitaliaGeolocationItem extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function defaultFieldSettings(): array {
-    $settings = ['allowed_type_schema' => ''];
+    $settings = ['allowed_type_schema' => '', 'allowed_type_custom_values' => ''];
     return $settings + parent::defaultFieldSettings();
   }
 
@@ -44,9 +44,23 @@ final class DigitaliaGeolocationItem extends FieldItemBase {
         '' => t('None'),
         'VRA' => t('VRA'),
         'CCMM' => t('CCMM'),
+        'custom' => t('Custom'),
       ],
       '#default_value' => $settings['allowed_type_schema'] ?? '',
       '#description' => $this->t('Select which location type schemas should be allowed for this field.'),
+    ];
+    
+    $element['allowed_type_custom_values'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Allowed location type custom values'),
+      '#description' => <<<EOT
+        Used only when "Custom" is selected in the "Allowed location type schemas" field above.<br>
+        Enter one value per line, in the format key|label.<br>
+        The key is the stored value. The label will be used in displayed values and edit forms.<br>
+        Keys may not contain dots. They will be removed if used.<br>cd
+        The label is optional: if a line contains a single string, it will be used as key and label.',
+      EOT,
+      '#default_value' => $settings['allowed_type_custom_values'] ?? '',
     ];
 
     return $element;
@@ -98,7 +112,10 @@ final class DigitaliaGeolocationItem extends FieldItemBase {
    */
   public function getConstraints(): array {
     $constraints = parent::getConstraints();
-    $options['type']['AllowedValues'] = array_keys(self::allAllowedTypeValues());
+    $custom_allowed_type_values = self::formatAllowedTypeValues($this->getSetting('allowed_type_custom_values') ?? '');
+    $allowed_type_values = array_keys(array_merge(self::allAllowedTypeValues(), $custom_allowed_type_values));
+    $options['type']['AllowedValues'] = $allowed_type_values;
+
     $constraint_manager = \Drupal::typedDataManager()->getValidationConstraintManager();
     $constraints[] = $constraint_manager->create('ComplexData', $options);
     return $constraints;
@@ -195,6 +212,17 @@ final class DigitaliaGeolocationItem extends FieldItemBase {
 
   public static function allAllowedTypeValues(): array {
     return array_merge(self::allowedCcmmTypeValues(), self::allowedVraTypeValues());
+  }
+
+  public static function formatAllowedTypeValues($allowed_type_values_string): array {
+    $allowed_type_values_string = str_replace(["\r\n", "\r"], ["\n", "\n"], $allowed_type_values_string);
+    $allowed_type_values_array = explode("\n", $allowed_type_values_string);
+    $allowed_type_values = [];
+    foreach ($allowed_type_values_array as $value) {
+      [$key, $label] = explode('|', $value, 2);
+      $allowed_type_values[$key] = $label;
+    }
+    return $allowed_type_values;
   }
 
 }

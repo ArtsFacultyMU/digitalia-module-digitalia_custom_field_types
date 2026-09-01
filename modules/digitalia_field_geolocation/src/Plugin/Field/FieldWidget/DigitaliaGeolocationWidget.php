@@ -63,6 +63,9 @@ final class DigitaliaGeolocationWidget extends WidgetBase {
       case "CCMM":
         $allowed_type_values = DigitaliaGeolocationItem::allowedCcmmTypeValues();
         break;
+      case "custom":
+        $allowed_type_values = DigitaliaGeolocationItem::formatAllowedTypeValues($this->fieldDefinition->getSetting('allowed_type_custom_values') ?? '');
+        break;
       default:
         $allowed_type_values = [];
         break;
