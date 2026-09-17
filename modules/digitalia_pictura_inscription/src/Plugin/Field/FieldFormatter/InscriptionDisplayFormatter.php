@@ -72,29 +72,35 @@ final class InscriptionDisplayFormatter extends FormatterBase {
       }
 
       if ($item->text) {
-        $module_path = \Drupal::service('extension.list.module')->getPath('digitalia_custom_field_types');
-        $img_src = '/' . $module_path . '/assets/info.svg';
+        if ($details) {
+          $module_path = \Drupal::service('extension.list.module')->getPath('digitalia_custom_field_types');
+          $img_src = '/' . $module_path . '/assets/info.svg';
+          $build['display_value'] = [
+            '#type' => 'details',
+            '#title' => Markup::create($item->text . ' <img src="' . $img_src . '" alt="' . $this->t('Info')->render() . '" class="digitalia-muni-pictura-nfields-info-icon" />'),
+            '#open' => FALSE,
+            'content' => [
+              '#type' => 'item',
+              '#markup' => $details,
+            ],
+            '#attributes' => [
+              'class' => ['digitalia-muni-pictura-nfields-details']
+            ],
+          ];
+        } else {
+          $build['display_value'] = [
+            '#markup' => $item->text,
+          ];
+        }
 
-        $build['#attached']['library'][] = 'digitalia_custom_field_types/display-details';
-
+      } elseif ($item->note) {
         $build['display_value'] = [
-          '#type' => 'details',
-          '#title' => Markup::create($item->text . ' <img src="' . $img_src . '" alt="' . $this->t('Info')->render() . '" class="digitalia-muni-pictura-nfields-info-icon" />'),
-          '#open' => FALSE,
-          'content' => [
-            '#type' => 'item',
-            '#markup' => $details,
-          ],
-          '#attributes' => [
-            'class' => ['digitalia-muni-pictura-nfields-details']
-          ],
+          '#markup' => $item->note,
         ];
       }
-
       $element[$delta] = $build;
     }
 
     return $element;
   }
-
 }
