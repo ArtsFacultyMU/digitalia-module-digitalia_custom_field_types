@@ -58,6 +58,12 @@ final class RelationDisplayFormatter extends FormatterBase {
 
       if ($item->source) {
         $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Source') . '</div>' . $item->source . '</div>';
+        if (empty($item->name)) {
+          if ($value) {
+            $value .= ' ';
+          }
+          $value .= $item->source;
+        }
       }
 
       if ($item->note) {
