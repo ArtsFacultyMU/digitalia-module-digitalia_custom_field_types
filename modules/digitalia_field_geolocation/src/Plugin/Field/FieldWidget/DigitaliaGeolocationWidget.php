@@ -98,35 +98,35 @@ final class DigitaliaGeolocationWidget extends WidgetBase {
 
     $element['adm1'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('adm1'),
+      '#title' => $this->t('Level 1'),
       '#default_value' => $items[$delta]->adm1 ?? NULL,
       '#disabled' => TRUE,
     ];
 
     $element['adm2'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('adm2'),
+      '#title' => $this->t('Level 2'),
       '#default_value' => $items[$delta]->adm2 ?? NULL,
       '#disabled' => TRUE,
     ];
 
     $element['adm3'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('adm3'),
+      '#title' => $this->t('Level 3'),
       '#default_value' => $items[$delta]->adm3 ?? NULL,
       '#disabled' => TRUE,
     ];
 
     $element['adm4'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('adm4'),
+      '#title' => $this->t('Level 4'),
       '#default_value' => $items[$delta]->adm4 ?? NULL,
       '#disabled' => TRUE,
     ];
 
     $element['adm5'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('adm5'),
+      '#title' => $this->t('Level 5'),
       '#default_value' => $items[$delta]->adm5 ?? NULL,
       '#disabled' => TRUE,
     ];

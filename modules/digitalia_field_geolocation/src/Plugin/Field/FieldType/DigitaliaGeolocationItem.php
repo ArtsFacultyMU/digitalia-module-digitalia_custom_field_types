@@ -72,15 +72,15 @@ final class DigitaliaGeolocationItem extends FieldItemBase {
     $properties['country'] = DataDefinition::create('string')
       ->setLabel(t('Country'));
     $properties['adm1'] = DataDefinition::create('string')
-      ->setLabel(t('adm1'));
+      ->setLabel(t('Level 1'));
     $properties['adm2'] = DataDefinition::create('string')
-      ->setLabel(t('adm2'));
+      ->setLabel(t('Level 2'));
     $properties['adm3'] = DataDefinition::create('string')
-      ->setLabel(t('adm3'));
+      ->setLabel(t('Level 3'));
     $properties['adm4'] = DataDefinition::create('string')
-      ->setLabel(t('adm4'));
+      ->setLabel(t('Level 4'));
     $properties['adm5'] = DataDefinition::create('string')
-      ->setLabel(t('adm5'));
+      ->setLabel(t('Level 5'));
     $properties['lat'] = DataDefinition::create('string')
       ->setLabel(t('Lat'));
     $properties['long'] = DataDefinition::create('string')

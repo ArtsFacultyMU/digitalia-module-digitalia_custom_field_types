@@ -43,6 +43,21 @@ msgstr "Typ"
 msgid "Country"
 msgstr "Stát"
 
+msgid "Level 1"
+msgstr "Úroveň 1"
+
+msgid "Level 2"
+msgstr "Úroveň 2"
+
+msgid "Level 3"
+msgstr "Úroveň 3"
+
+msgid "Level 4"
+msgstr "Úroveň 4"
+
+msgid "Level 5"
+msgstr "Úroveň 5"
+
 # ---- VRA ---------------------------------------------------------
 
 msgid "Creation"
