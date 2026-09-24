@@ -70,7 +70,7 @@ final class DigitaliaGeolocationDisplayFormatter extends FormatterBase {
       for ($i = 1; $i <= 5; $i++) {
         $adm = 'adm' . $i;
         if (!empty($item->{$adm})) {
-          $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t($adm) . '</div>' . $item->{$adm} . '</div>';
+          $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Level ' . $i) . '</div>' . $item->{$adm} . '</div>';
         }
       }
 

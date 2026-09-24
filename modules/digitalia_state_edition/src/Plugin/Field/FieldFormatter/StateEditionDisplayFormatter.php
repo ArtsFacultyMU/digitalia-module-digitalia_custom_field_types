@@ -29,9 +29,20 @@ final class StateEditionDisplayFormatter extends FormatterBase {
     foreach ($items as $delta => $item) {
       $build = [];
       $details = "";
+      $display_text = "";
+
+      if ($item->name) {
+        $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Name') . '</div>' . $item->name . '</div>';
+        $display_text = $item->name;
+      }
 
       if ($item->description) {
         $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Description') . '</div>' . $item->description . '</div>';
+        if ($item->name) {
+          $display_text .= '. ' . $item->description;
+        } else {
+          $display_text = $item->description;
+        }
       }
 
       if ($item->type) {
@@ -59,14 +70,14 @@ final class StateEditionDisplayFormatter extends FormatterBase {
         $details .= '<div class="field field--label-inline"><div class="field__label">' . $this->t('Note') . '</div>' . $item->note . '</div>';
       }
 
-      if ($item->name) {
+      if ($display_text) {
         $module_path = \Drupal::service('extension.list.module')->getPath('digitalia_custom_field_types');
         $img_src = '/' . $module_path . '/assets/info.svg';
         $build['#attached']['library'][] = 'digitalia_custom_field_types/display-details';
 
         $build['display_value'] = [
           '#type' => 'details',
-          '#title' => Markup::create($item->name . ' <img src="' . $img_src . '" alt="' . $this->t('Info')->render() . '" class="digitalia-muni-pictura-nfields-info-icon" />'),
+          '#title' => Markup::create($display_text . ' <img src="' . $img_src . '" alt="' . $this->t('Info')->render() . '" class="digitalia-muni-pictura-nfields-info-icon" />'),
           '#open' => FALSE,
           'content' => [
             '#type' => 'item',
